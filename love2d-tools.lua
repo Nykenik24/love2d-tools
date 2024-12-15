@@ -30,6 +30,7 @@ SOFTWARE.
 	]],
 	},
 }
+
 Tools._mt = { _index = Tools }
 
 return Tools
