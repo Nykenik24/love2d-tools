@@ -6,12 +6,14 @@ Love2d utilities
 ```bash
 git clone https://github.com/Nykenik24/love2d-tools.git
 ```
+
 2. Require the library in your `main.lua` or the file where you load libraries.
 ```lua
 Tools = require("love2d-tools.love2d-tools")
 -- or you can require every module individually
 Class = require("love2d-tools.modules.class")
 ```
+
 3. Now you can use the library, all the modules are documented.
 ```lua
 Tools = require("love2d-tools.love2d-tools")
