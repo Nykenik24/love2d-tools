@@ -41,7 +41,9 @@ Added modules:
 - Debug
 - Timer
 - OOP
+\
 README.md changes:
 - Added installation guide
+\
 Notes:
 I had these modules already made, but i had to change completely the `class` module because i had public and private variables, but they weren't necessary.
