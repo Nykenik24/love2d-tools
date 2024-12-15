@@ -28,19 +28,20 @@ print(MyClass_obj.smth)
 ### Planned:
 - Math
 - Vector2
-- Timer
-- OOP
-- Debug
 > NOTE: Modules may be added in the future
 ### Made:
-*Nothing...*
+- Debug
+- Timer
+- OOP
 
-<!-- 
 ## Changelog
-**Current version:**
-> Format: release.version[.beta]
-> Release 1 version 5 beta 4 would be 1.5.4
 
-## Roadmap
-*Nothing...*
--->
+#### First log
+Added modules:
+- Debug
+- Timer
+- OOP
+README.md changes:
+- Added installation guide
+Notes:
+I had these modules already made, but i had to change completely the `class` module because i had public and private variables, but they weren't necessary.
