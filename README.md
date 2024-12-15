@@ -21,7 +21,8 @@ MyClass = Class {
 }
 MyClass_obj = MyClass:new()
 
-print(MyClass_obj.smth)
+print(MyClass_obj.smth) -- "Hello World!"
+print(tostring(MyClass_obj._is(MyClass))) -- true
 ```
 
 ## Modules
