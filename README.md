@@ -14,15 +14,23 @@ Class = require("love2d-tools.modules.class")
 ```
 3. Now you can use the library, all the modules are documented.
 ```lua
-Class = require("love2d-tools.modules.class")
-MyClass = Class {
+ClassTool = require("love2d-tools.modules.class")
+DebugTool = require("love2d-tools.modules.debug") --note that lua already has a standard debug library, so don't name the module "debug".
+MyClass = ClassTool {
     smth = "Hello World!",
     other_thing = 5
 }
 MyClass_obj = MyClass:new()
 
-print(MyClass_obj.smth) -- "Hello World!"
-print(tostring(MyClass_obj._is(MyClass))) -- true
+DebugTool.regular(MyClass_obj.smth)
+DebugTool.choose(
+    MyClass_obj._is(MyClass), --Boolean
+    "info", --True message type
+    "error", --False message type
+    "MyClass_obj is a MyClass object", --False message
+    "MyClass_obj isn't a MyClass object" --True message
+)
+DebugTool.assert(MyClass_obj.other_thing == 5, "MyClass_obj.other_thing isn't five")
 ```
 
 ## Modules
