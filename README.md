@@ -17,6 +17,7 @@ Class = require("love2d-tools.modules.class")
 Tools = require("love2d-tools.love2d-tools")
 ClassTool = Tools.class
 DebugTool = Tools.debug --note that lua already has a standard debug library, so don't name the module "debug".
+
 MyClass = ClassTool {
     smth = "Hello World!",
     other_thing = 5
