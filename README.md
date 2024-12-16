@@ -37,7 +37,7 @@ DebugTool.choose(
 DebugTool.assert(MyClass_obj.other_thing == 5, "MyClass_obj.other_thing isn't five")
 ```
 
-## Modules
+# Modules
 ### Planned:
 - Math
 - Vector2
@@ -62,6 +62,7 @@ DebugTool.assert(MyClass_obj.other_thing == 5, "MyClass_obj.other_thing isn't fi
 #### Notes:
 I had these modules already made, but i had to change completely the `class` module because i had public and private variables, but they weren't necessary.
 
+# More information
 ## Inspiration
 - 1bardesign/**batteries**: https://github.com/1bardesign/batteries/
 
