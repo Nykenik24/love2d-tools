@@ -45,7 +45,7 @@ DebugTool.assert(MyClass_obj.other_thing == 5, "MyClass_obj.other_thing isn't fi
 > NOTE: Modules may be added in the future
 ### Made:
 - **Debug**: Helps to debug with an `assert` function, various types of messages, a *"choose statement"* that displays a message depending on a boolean; etc.
-- **Timer**: Allows to create timers, has an automatic `update` method and a `onEnd` method that you can customize
+- **Timer**: Allows to create timers, has an automatic `update` method and an `onEnd` method that you can customize
 - **OOP**: Class system, has: objects *(obviously)*, subclasses, *"merging"* and *"cloning"* classes; etc.
 ### Considered:
 - Message bus
