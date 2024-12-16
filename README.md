@@ -31,8 +31,8 @@ DebugTool.choose(
     MyClass_obj._is(MyClass), --Boolean
     "info", --True message type
     "error", --False message type
-    "MyClass_obj is a MyClass object", --False message
-    "MyClass_obj isn't a MyClass object" --True message
+    "MyClass_obj is a MyClass object", --True message
+    "MyClass_obj isn't a MyClass object" --False message
 )
 DebugTool.assert(MyClass_obj.other_thing == 5, "MyClass_obj.other_thing isn't five")
 ```
@@ -41,6 +41,7 @@ DebugTool.assert(MyClass_obj.other_thing == 5, "MyClass_obj.other_thing isn't fi
 ### Planned:
 - Math
 - Vector2
+- Message bus
 > NOTE: Modules may be added in the future
 ### Made:
 - Debug
@@ -60,3 +61,12 @@ DebugTool.assert(MyClass_obj.other_thing == 5, "MyClass_obj.other_thing isn't fi
 
 #### Notes:
 I had these modules already made, but i had to change completely the `class` module because i had public and private variables, but they weren't necessary.
+
+## Inspiration
+- 1bardesign/**batteries**: https://github.com/1bardesign/batteries/
+
+## Contributing
+To contribute to the project, follow these steps:
+1. Fork the repository
+2. Make all the changes you consider
+3. Make a pull request
