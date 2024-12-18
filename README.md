@@ -53,20 +53,6 @@ DebugTool.assert(MyClass_obj.other_thing == 5, "MyClass_obj.other_thing isn't fi
 #### Ideas
 If you have any module idea open an issue and i will try to answer.
 
-## Changelog
-
-### First log
-#### Added modules:
-- Debug
-- Timer
-- OOP
-
-#### README.md changes:
-- Added installation guide
-
-#### Notes:
-I had these modules already made, but i had to change completely the `class` module because i had public and private variables, but they weren't necessary.
-
 # More information
 ## Inspiration
 - 1bardesign/**batteries**: https://github.com/1bardesign/batteries/
@@ -76,3 +62,7 @@ To contribute to the project, follow these steps:
 1. Fork the repository
 2. Make all the changes you consider
 3. Make a pull request
+
+# Links
+- Repository link: https://github.com/Nykenik24/love2d-tools
+<!-- - Love2d forum post: -->
