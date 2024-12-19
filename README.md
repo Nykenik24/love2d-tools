@@ -53,6 +53,13 @@ DebugTool.assert(MyClass_obj.other_thing == 5, "MyClass_obj.other_thing isn't fi
 #### Ideas
 If you have any module idea open an issue and i will try to answer.
 
+# Roadmap
+[] - Document nicely every method.
+[] -  Make every module have the same code structure.
+[] - Make the library lightweight.
+[] - Merge all similar modules:
+    [] - **Debug** and **Log**.
+
 # More information
 ## Inspiration
 - 1bardesign/**batteries**: https://github.com/1bardesign/batteries/
@@ -65,4 +72,4 @@ To contribute to the project, follow these steps:
 
 # Links
 - Repository link: https://github.com/Nykenik24/love2d-tools
-<!-- - Love2d forum post: -->
+- Love2d forum post: https://love2d.org/forums/viewtopic.php?t=96218
