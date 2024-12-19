@@ -3,6 +3,7 @@ local Tools = {
 	class = require("modules.class"),
 	timer = require("modules.timer"),
 	log = require("modules.log"),
+	math = require("modules.math"),
 	lib_info = {
 		author = "Nykenik24",
 		url = "https://github.com/Nykenik24/love2d-tools",
@@ -28,10 +29,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-	]],
-	},
+	]]
+	}
 }
-
 Tools._mt = { _index = Tools }
-
 return Tools
