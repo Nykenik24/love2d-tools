@@ -19,6 +19,7 @@ Class = require("love2d-tools.modules.class")
 Tools = require("love2d-tools.lib")
 ClassTool = Tools.class
 DebugTool = Tools.debug --note that lua already has a standard debug library, so don't name the module "debug".
+TimerTool = Tools.timer
 
 MyClass = ClassTool {
     smth = "Hello World!",
@@ -34,7 +35,13 @@ DebugTool.choose(
     "MyClass_obj is a MyClass object", --True message
     "MyClass_obj isn't a MyClass object" --False message
 )
-DebugTool.assert(MyClass_obj.other_thing == 5, "MyClass_obj.other_thing isn't five")
+
+MyTimer = Timer(5) --5 is the duration of the timer
+MyTimer:Update()
+
+MyTimer.OnEnd = function(self) --will be called every time the timer ends
+    DebugTool.assert(MyClass_obj.other_thing == 5, "MyClass_obj.other_thing isn't five")
+end
 ```
 
 # Modules
