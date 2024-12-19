@@ -54,11 +54,11 @@ DebugTool.assert(MyClass_obj.other_thing == 5, "MyClass_obj.other_thing isn't fi
 If you have any module idea open an issue and i will try to answer.
 
 # Roadmap
-[] - Document nicely every method.
-[] -  Make every module have the same code structure.
-[] - Make the library lightweight.
-[] - Merge all similar modules:
-    [] - **Debug** and **Log**.
+- Document nicely every method.
+-  Make every module have the same code structure.
+- Make the library lightweight.
+- Merge all similar modules:
+    - **Debug** and **Log**.
 
 # More information
 ## Inspiration
