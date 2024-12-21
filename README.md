@@ -1,5 +1,9 @@
 # Love2d tools
-Love2d utilities
+> Love2d tools is inspired by [batteries.lua](https://github.com/1bardesign/batteries/).
+
+Love2d tools (or love2d-tools) is a series of [LOVE2D game framework](https://love2d.org) utilities to make developing games with this fantastic game framework easier and faster.\
+\
+It comes with OOP, Timers, a Debugging helper, etc.
 
 ## Installation
 1. Clone the repository
