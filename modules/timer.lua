@@ -48,13 +48,13 @@ M.OnEnd = function(self)
 	print(("Timer %s ended!"):format(tostring(self)))
 end
 
-local timer_class = class(M)
+local M_class = class(M)
 
 ---Create a new timer.
 ---@param duration integer
 ---@return table
 local function new(duration)
-	local timer_obj = timer_class:new()
+	local timer_obj = M_class:new()
 	timer_obj.seconds = duration
 	timer_obj.orig = duration
 	return timer_obj
