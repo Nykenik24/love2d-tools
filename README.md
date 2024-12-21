@@ -148,7 +148,7 @@ And finally i just commit and push the changes to the repo.
 ```bash
 git add . # my alias: ga .
 git commit -m 'Finished module "<module_name>"' # my alias: gcmsg <message>
-git push origin main # my alias: gppush
+git push origin main # my alias: ggpush
 ```
 
 # Links
