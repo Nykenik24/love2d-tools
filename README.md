@@ -76,7 +76,7 @@ To contribute to the project, follow these steps:
 3. Make a pull request
 
 ## Making modules
-I'll explain to you how i make every module. This can help if you want to [contribute](README#Contributing).\
+I'll explain to you how i make every module. This can help if you want to [contribute](README#Contributing).
 
 ### 1. Create the file
 When creating the files i try to name them as short as possible, without using more than one word. This is because is way more easy to manage files with simple names and for you to understand
