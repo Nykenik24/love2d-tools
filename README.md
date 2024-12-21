@@ -76,5 +76,5 @@ To contribute to the project, follow these steps:
 3. Make a pull request
 
 # Links
-- Repository link: https://github.com/Nykenik24/love2d-tools
-- Love2d forum post: https://love2d.org/forums/viewtopic.php?t=96218
+- Repository link: [github.com/Nykenik24/love2d-tools](https://github.com/Nykenik24/love2d-tools)
+- Love2d forum post: [love2d.org/forums/viewtopic.php?t=96218](https://love2d.org/forums/viewtopic.php?t=96218)
