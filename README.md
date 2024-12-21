@@ -75,6 +75,82 @@ To contribute to the project, follow these steps:
 2. Make all the changes you consider
 3. Make a pull request
 
+## Making modules
+I'll explain to you how i make every module. This can help if you want to [contribute](README#Contributing).\
+\
+1. Create the file
+When creating the files i try to name them as short as possible, without using more than one word. This is because is way more easy to manage files with simple names and for you to understand
+what every module does looking at the file name.
+2. Write the module base
+Every module has this base:
+```lua
+local M = {}
+
+return M
+```
+Some modules are classes, so i need to add some extra lines.
+```lua
+local class = require("modules.class")
+local M = {}
+
+local M_class = class(M)
+return M_class
+```
+3. Make every method and variable
+Now that i have the module base, i need to make every method and every variable.
+```lua
+local class = require("modules.class")
+local M = {}
+M.SomeRandomVariable = "!dlroW olleH"
+
+function M.SomeRandomMethod(self)
+    return self.SomeRandomVariable
+end
+
+local M_class = class(M)
+return M_class
+```
+But, wait. If you view the modules that are classes, you will see how they have a `new()` method being returned.
+```lua
+local function new()
+    return M_class:new()
+end
+```
+Some modules have a variable declared when creating a new object
+```lua
+local function new(a, b)
+    local obj = M_class:new()
+    obj.a = a
+    obj.b = b
+
+    return obj
+end
+```
+4. Documenting
+Here i just use lua annotations of their default lsp that everyone uses to make using the modules easier and not needing former documentation in some documentation host like `readthedocs`.
+```lua
+---@param a number Number "a"
+---@param b number Number "b"
+---@return number Sum
+function M.Add(a, b)
+    return a + b
+end
+```
+5. Final steps
+After finishing the module, i check that the code is correct, look for spelling errors and all of that boring ~crap~.\
+\
+Then i add it to `lib.lua`
+```lua
+<module_name> = require("modules.<module_name>")
+```
+\\
+And finally i just commit and push the changes to the repo.
+```bash
+git add . # my alias: ga .
+git commit -m 'Finished module "<module_name>"' # my alias: gcmsg <message>
+git push origin main # my alias: gppush
+```
+
 # Links
 - Repository link: [github.com/Nykenik24/love2d-tools](https://github.com/Nykenik24/love2d-tools)
 - Love2d forum post: [love2d.org/forums/viewtopic.php?t=96218](https://love2d.org/forums/viewtopic.php?t=96218)
