@@ -2,6 +2,7 @@ local Tools = {
 	debug = require("modules.debug"),
 	class = require("modules.class"),
 	timer = require("modules.timer"),
+	math = require("modules.math"),
 	lib_info = {
 		author = "Nykenik24",
 		url = "https://github.com/Nykenik24/love2d-tools",

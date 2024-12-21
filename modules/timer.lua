@@ -1,18 +1,18 @@
 local class = require("modules.class")
 
-local timer = {}
-timer.orig = 0
-timer.seconds = 0
-timer.rounded_seconds = math.floor(timer.seconds)
+local M = {}
+M.orig = 0
+M.seconds = 0
+M.rounded_seconds = math.floor(M.seconds)
 
-timer.elapsed = false
+M.elapsed = false
 
 ---Update the timer.
 ---@param self table
 ---@param dt integer
 ---@return integer self.secs Time countdown.
 ---@return boolean elapsed True if the timer ended.
-function timer:Update(dt)
+function M:Update(dt)
 	if self.seconds > 0 then
 		self.seconds = self.secs - dt
 	elseif self.seconds < 0 then
@@ -34,7 +34,7 @@ end
 ---@param self table
 ---@param new_duration? integer
 ---@return integer self.secs Time countdown.
-function timer:Reset(new_duration)
+function M:Reset(new_duration)
 	if not new_duration then
 		self.seconds = self.orig
 	else
@@ -44,11 +44,11 @@ function timer:Reset(new_duration)
 	return self.seconds
 end
 
-timer.OnEnd = function(self)
+M.OnEnd = function(self)
 	print(("Timer %s ended!"):format(tostring(self)))
 end
 
-local timer_class = class(timer)
+local timer_class = class(M)
 
 ---Create a new timer.
 ---@param duration integer

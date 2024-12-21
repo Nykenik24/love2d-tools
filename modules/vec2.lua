@@ -1,5 +1,3 @@
--- NOTE: MODULE IS W.I.P
-
 local class = require("modules.class")
 local vec2 = {}
 vec2.x = 0

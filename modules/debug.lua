@@ -8,7 +8,7 @@
 ---@field error function Error.
 ---@field fatal function Fatal error.
 ---@field history table Log history.
-local debug_util = {}
+local M = {}
 
 ---@alias log_types
 ---| `"regular"`
@@ -29,28 +29,28 @@ local types = {
 	error = "\27[31m",
 	fatal = "\27[35m",
 }
-debug_util._chained = {}
-debug_util.history = {}
+M._chained = {}
+M.history = {}
 ChainNumber = 1
 
 for key, color in pairs(types) do
-	debug_util[key] = function(msg)
+	M[key] = function(msg)
 		local before_msg = color .. "{" .. key:upper() .. "}: "
 		local white = "\27[00m"
 		print(before_msg .. white .. tostring(msg))
-		debug_util.history[#debug_util.history + 1] = msg
+		M.history[#debug_util.history + 1] = msg
 
 		ChainNumber = 1
-		return debug_util._chained
+		return M._chained
 	end
-	debug_util._chained[key] = function(msg)
+	M._chained[key] = function(msg)
 		local before_msg = color .. "{CHAINED " .. key:upper() .. " " .. ChainNumber .. "}: "
 		local white = "\27[00m"
 		print(before_msg .. white .. tostring(msg))
-		debug_util.history[#debug_util.history + 1] = msg
+		M.history[#debug_util.history + 1] = msg
 
 		ChainNumber = ChainNumber + 1
-		return debug_util._chained
+		return M._chained
 	end
 end
 
@@ -61,9 +61,9 @@ end
 ---@param msg_true? string
 ---@param msg_false? string
 ---@return table
-function debug_util.Choose(condition, choice_true, choice_false, msg_true, msg_false)
-	local func_true = debug_util[choice_true] or debug_util.info
-	local func_false = debug_util[choice_false] or debug_util.error
+function M.Choose(condition, choice_true, choice_false, msg_true, msg_false)
+	local func_true = M[choice_true] or debug_util.info
+	local func_false = M[choice_false] or debug_util.error
 	msg_true = msg_true or "Condition is true"
 	msg_false = msg_false or "Condition is false"
 	if condition then
@@ -71,7 +71,7 @@ function debug_util.Choose(condition, choice_true, choice_false, msg_true, msg_f
 	else
 		func_false(msg_false)
 	end
-	return debug_util._chained
+	return M._chained
 end
 
 ---If a condition is false, log a message as error and optionally execute a function.
@@ -79,35 +79,35 @@ end
 ---@param msg string
 ---@param func? function
 ---@return table
-function debug_util.Assert(condition, msg, func)
+function M.Assert(condition, msg, func)
 	func = func or function() end
 	if not condition then
-		debug_util.error(msg)
+		M.error(msg)
 		func()
 	end
-	return debug_util._chained
+	return M._chained
 end
 
 ---Compare two values.
 ---@param val1 any
 ---@param val2 any
 ---@return table
-function debug_util.Compare(val1, val2)
+function M.Compare(val1, val2)
 	if val1 > val2 then
-		debug_util.regular('"value 1" is greater than "value 2"')
+		M.regular('"value 1" is greater than "value 2"')
 	else
-		debug_util.regular('"value 1" is smaller than "value 2"')
+		M.regular('"value 1" is smaller than "value 2"')
 	end
-	return debug_util._chained
+	return M._chained
 end
 
 ---Log multiple giving an action stack.
 ---@param log_stack table[]
-function debug_util.MultipleLogs(log_stack)
+function M.MultipleLogs(log_stack)
 	for i, log in ipairs(log_stack) do
 		local log_type = log.type or log[1]
 		local msg = log.msg or log[2]
-		local log_func = debug_util._chained[log_type] or debug_util._chained.regular
+		local log_func = M._chained[log_type] or debug_util._chained.regular
 		log_func(msg)
 	end
 end
@@ -115,7 +115,7 @@ end
 ---Print a table in a readable format
 ---@param t table
 ---@param depth? integer Used to make the function recursive
-function debug_util.PrintTable(t, depth)
+function M.PrintTable(t, depth)
 	local function Tabs(n)
 		local tabs = ""
 		for _ = 1, n do
@@ -137,7 +137,7 @@ function debug_util.PrintTable(t, depth)
 		end
 
 		if type(v) == "table" then
-			debug_util.PrintTable(v, depth + 1)
+			M.PrintTable(v, depth + 1)
 		end
 	end
 	if depth > 1 then
@@ -149,22 +149,22 @@ end
 
 ---Get the log history.
 ---@return table
-function debug_util:GetHistory()
+function M:GetHistory()
 	return self.history
 end
 
 ---Set the log history.
 ---@param new_history table
-function debug_util:SetHistory(new_history)
+function M:SetHistory(new_history)
 	self.history = new_history
 	return self.history
 end
 
 ---Clear the log history.
 ---@return table
-function debug_util:ClearHistory()
+function M:ClearHistory()
 	self.history = {}
 	return self.history
 end
 
-return debug_util
+return M

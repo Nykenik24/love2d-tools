@@ -47,12 +47,12 @@ end
 # Modules
 ### W.I.P:
 - **Math**: Useful math functions
-- **Vector2**: Simple vec2 system
 > NOTE: Modules may be added in the future
 ### Made:
 - **Debug**: Helps to debug with an `assert` function, various types of messages, a *"choose statement"* that displays a message or other depending on a boolean; etc.
 - **Timer**: Allows to create timers, has an automatic `update` method and an `onEnd` method that you can customize
 - **OOP**: Class system, has: objects *(obviously)*, subclasses, *"merging"* and *"cloning"* classes; etc.
+- **Vector2**: Simple vec2 system
 ### Considered:
 - Message bus
 
@@ -61,9 +61,9 @@ If you have any module idea open an issue and i will try to answer.
 
 # Roadmap
 - Document nicely every method.
-- Make every module have the same code structure.
-- Make the library lightweight.
-- Merge all similar modules. 
+- ~Make every module have the same code structure.~
+- ~Merge all similar modules.~ 
+- Finish all modules.
 
 # More information
 ## Inspiration

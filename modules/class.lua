@@ -1,14 +1,14 @@
-local methods = {}
+local M = {}
 
 ---New object.
 ---@param self class
 ---@return table
-function methods.new(self)
+function M.new(self)
 	local obj = {}
 	for k, v in pairs(self.attributes) do
 		obj[k] = v
 	end
-	obj._is = methods.is
+	obj._is = M.is
 	return obj
 end
 
@@ -17,8 +17,8 @@ end
 ---@param name string
 ---@param attributes table
 ---@return class
-function methods.extend(self, name, attributes)
-	self.sub[name] = setmetatable(methods.NewClass(attributes), self._mt)
+function M.extend(self, name, attributes)
+	self.sub[name] = setmetatable(M.NewClass(attributes), self._mt)
 	return self.sub[name]
 end
 
@@ -26,7 +26,7 @@ end
 ---@param obj table
 ---@param class class
 ---@return boolean
-function methods.is(obj, class)
+function M.is(obj, class)
 	local obj_mt = getmetatable(obj)
 	local class_mt = getmetatable(class._mt)
 	if obj_mt == class_mt then
@@ -39,15 +39,15 @@ end
 ---Clone a class.
 ---@param class class
 ---@return class
-function methods.clone(class)
-	return methods.NewClass(class.attributes)
+function M.clone(class)
+	return M.NewClass(class.attributes)
 end
 
 ---Merge two classes.
 ---@param class1 class
 ---@param class2 class
 ---@return class
-function methods.merge(class1, class2)
+function M.merge(class1, class2)
 	local merged = {
 		class1 = class1.attributes,
 		class2 = class2.attributes,
@@ -58,10 +58,10 @@ function methods.merge(class1, class2)
 			final[k] = var
 		end
 	end
-	return methods.NewClass(final)
+	return M.NewClass(final)
 end
 
-function methods.NewClass(attributes)
+function M.NewClass(attributes)
 	---@class class
 	---@field attributes table Vars
 	---@field sub table Subclasses
@@ -73,11 +73,11 @@ function methods.NewClass(attributes)
 	for k, v in pairs(attributes) do
 		cls.attributes[k] = v
 	end
-	cls.new = methods.new
-	cls.extend = methods.extend
-	cls.clone = methods.clone
-	cls.merge = methods.merge
+	cls.new = M.new
+	cls.extend = M.extend
+	cls.clone = M.clone
+	cls.merge = M.merge
 	return cls
 end
 
-return methods.NewClass
+return M.NewClass
