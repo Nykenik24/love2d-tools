@@ -1,14 +1,20 @@
-# Love2d tools
+# Love2d tools 💪
 > Love2d tools is inspired by [batteries.lua](https://github.com/1bardesign/batteries/).
 
-Love2d tools (or love2d-tools) is a series of [LOVE2D game framework](https://love2d.org) utilities to make developing games with this fantastic game framework easier and faster.\
+**Love2d tools** *(or love2d-tools)* is a series of **[LOVE2D game framework](https://love2d.org)** utilities to make developing games with Love2d easier and faster. It can make your game developing
+experience a little bit better by providing useful tools that almost every game engine has, but Love2d lacks off.\
 \
-It comes with OOP, Timers, a Debugging helper, etc.
+It comes with OOP, Timers, a Debugging helper, etc. All modules can be seen [here](README#Modules).
+> note: Love2d tools is **NOT** perfect, and you should know that bugs can occur and that it is currently **Work In Progress**.
 
 ## Installation
 1. Clone the repository
 ```bash
 git clone https://github.com/Nykenik24/love2d-tools.git
+```
+Or add it as a submodule **(recommended)**
+```bash
+git submodule add https://github.com/Nykenik24/love2d-tools.git path/to/library
 ```
 
 2. Require the library in your `main.lua` or the file where you load libraries.
