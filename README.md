@@ -77,11 +77,11 @@ To contribute to the project, follow these steps:
 
 ## Making modules
 I'll explain to you how i make every module. This can help if you want to [contribute](README#Contributing).\
-\
-1. Create the file
+
+### 1. Create the file
 When creating the files i try to name them as short as possible, without using more than one word. This is because is way more easy to manage files with simple names and for you to understand
 what every module does looking at the file name.
-2. Write the module base
+### 2. Write the module base
 Every module has this base:
 ```lua
 local M = {}
@@ -96,7 +96,7 @@ local M = {}
 local M_class = class(M)
 return M_class
 ```
-3. Make every method and variable
+### 3. Make every method and variable
 Now that i have the module base, i need to make every method and every variable.
 ```lua
 local class = require("modules.class")
@@ -126,7 +126,7 @@ local function new(a, b)
     return obj
 end
 ```
-4. Documenting
+### 4. Documenting
 Here i just use lua annotations of their default lsp that everyone uses to make using the modules easier and not needing former documentation in some documentation host like `readthedocs`.
 ```lua
 ---@param a number Number "a"
@@ -136,14 +136,14 @@ function M.Add(a, b)
     return a + b
 end
 ```
-5. Final steps
+### 5. Final steps
 After finishing the module, i check that the code is correct, look for spelling errors and all of that boring ~crap~.\
 \
 Then i add it to `lib.lua`
 ```lua
 <module_name> = require("modules.<module_name>")
 ```
-\\
+\
 And finally i just commit and push the changes to the repo.
 ```bash
 git add . # my alias: ga .
