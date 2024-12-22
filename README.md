@@ -104,7 +104,7 @@ I will try to answer as fast as posible. If i don't answer, [send me an email](m
 ### Contributing rules
 1. Check the code before making the pull request\
 I am not a code reviewer. I will try to check the code that is merged, but errors can go trough.
-2. Try to follow the steps [below](<README.md#Making modules>).
+2. Try to follow the steps [below](<README.md#Making modules>) when creating the module.
 3. Document every method and be consisent with naming conventions.
 4. If you are going to make the module a class, `return` a `new()` method, not the class.
 
