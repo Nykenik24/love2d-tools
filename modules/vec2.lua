@@ -1,15 +1,14 @@
 local class = require("modules.class")
+
+---@class Vector2
+---@field x number x coordinate
+---@field y number y coordinate
+---@field angle number vector angle
 local M = {}
 M.x = 0
 M.y = 0
 M.angle = 0
 M.magnitude = 0
-
----@class Vector2
----@field x number
----@field y number
----@field angle number
----@field magnitude number
 
 ---Compare "x" and "y" of two vectors
 ---@param self Vector2
@@ -67,7 +66,7 @@ function M.Rotate(self, angle)
 	return final_angle
 end
 
----Moves (Adds to the position) the vector.
+---Adds to the position of the vector.
 ---@param self Vector2
 ---@param x number Number added to the x position.
 ---@param y number Number added to the y position.
@@ -81,7 +80,7 @@ function M.Move(self, x, y)
 	return moved_vector
 end
 
----Translates (Overwrites the position) the vector.
+---Overwrites the position of the vector.
 ---@param self Vector2
 ---@param x number Target x position
 ---@param y number Target y position
@@ -93,7 +92,9 @@ function M.Translate(self, x, y)
 	return self
 end
 
----Draw the vector
+---Draw the vector.
+---
+---Requires being called in Love2d to work.
 ---@param self Vector2
 ---@param orig_x? number X original point. Default = center of screen
 ---@param orig_y? number Y original point. Default = center of screen
@@ -104,6 +105,10 @@ end
 
 local M_class = class(M)
 
+---Create a new vector
+---@param x number
+---@param y number
+---@return Vector2
 local function new(x, y)
 	local obj = M_class:new()
 	obj.x = x

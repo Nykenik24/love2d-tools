@@ -1,3 +1,5 @@
+---@class Math
+---@field pi number Pi (3.1415926535898)
 local M = {}
 M.pi = math.pi
 

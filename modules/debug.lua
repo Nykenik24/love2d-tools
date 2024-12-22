@@ -1,4 +1,4 @@
----@class debug_util
+---@class M
 ---@field regular function Regular message.
 ---@field trace function Trace message.
 ---@field debug function Debug message.
@@ -8,6 +8,7 @@
 ---@field error function Error.
 ---@field fatal function Fatal error.
 ---@field history table Log history.
+---@field _chained table Methods for chained messages
 local M = {}
 
 ---@alias log_types
@@ -38,7 +39,7 @@ for key, color in pairs(types) do
 		local before_msg = color .. "{" .. key:upper() .. "}: "
 		local white = "\27[00m"
 		print(before_msg .. white .. tostring(msg))
-		M.history[#debug_util.history + 1] = msg
+		M.history[#M.history + 1] = msg
 
 		ChainNumber = 1
 		return M._chained
@@ -47,7 +48,7 @@ for key, color in pairs(types) do
 		local before_msg = color .. "{CHAINED " .. key:upper() .. " " .. ChainNumber .. "}: "
 		local white = "\27[00m"
 		print(before_msg .. white .. tostring(msg))
-		M.history[#debug_util.history + 1] = msg
+		M.history[#M.history + 1] = msg
 
 		ChainNumber = ChainNumber + 1
 		return M._chained
@@ -62,8 +63,8 @@ end
 ---@param msg_false? string
 ---@return table
 function M.Choose(condition, choice_true, choice_false, msg_true, msg_false)
-	local func_true = M[choice_true] or debug_util.info
-	local func_false = M[choice_false] or debug_util.error
+	local func_true = M[choice_true] or M.info
+	local func_false = M[choice_false] or M.error
 	msg_true = msg_true or "Condition is true"
 	msg_false = msg_false or "Condition is false"
 	if condition then
@@ -74,7 +75,7 @@ function M.Choose(condition, choice_true, choice_false, msg_true, msg_false)
 	return M._chained
 end
 
----If a condition is false, log a message as error and optionally execute a function.
+---If a condition is false, log a message as error and optionally call a function.
 ---@param condition boolean
 ---@param msg string
 ---@param func? function
@@ -107,13 +108,15 @@ function M.MultipleLogs(log_stack)
 	for i, log in ipairs(log_stack) do
 		local log_type = log.type or log[1]
 		local msg = log.msg or log[2]
-		local log_func = M._chained[log_type] or debug_util._chained.regular
+		local log_func = M._chained[log_type] or M._chained.regular
 		log_func(msg)
 	end
 end
 
----Print a table in a readable format
----@param t table
+---Print a table in a readable format.
+---
+---Uses ANSI Colors
+---@param t table Table printed
 ---@param depth? integer Used to make the function recursive
 function M.PrintTable(t, depth)
 	local function Tabs(n)

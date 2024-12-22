@@ -1,5 +1,11 @@
 local class = require("modules.class")
 
+---@class Timer
+---@field orig number Original duration
+---@field seconds number Seconds until timer end
+---@field rounded_seconds number Rounded seconds until timer end
+---@field elapsed boolean Timer has ended
+---@field OnEnd function Function called when timer ends
 local M = {}
 M.orig = 0
 M.seconds = 0
@@ -52,7 +58,7 @@ local M_class = class(M)
 
 ---Create a new timer.
 ---@param duration integer
----@return table
+---@return Timer
 local function new(duration)
 	local timer_obj = M_class:new()
 	timer_obj.seconds = duration
