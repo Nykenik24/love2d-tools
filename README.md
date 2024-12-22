@@ -142,7 +142,7 @@ local function new()
     return M_class:new()
 end
 ```
-You can also see how some modules have variables bein choosen by the user when creating a new object.
+You can also see how some modules have variables being choosen by the user when creating a new object.
 ```lua
 local function new(a, b)
     local obj = M_class:new()
