@@ -202,8 +202,9 @@ end
 ### 5. Final steps
 After finishing the module, i check that the code is correct, look for spelling errors and all of that boring ~crap~.\
 \
-Then i add it to `lib.lua`
+Then i add it to `lib.lua` and `README.md` ([README.md format](README.md#Modules))
 ```lua
+-- lib.lua
 <module_name> = require("modules.<module_name>")
 ```
 \
