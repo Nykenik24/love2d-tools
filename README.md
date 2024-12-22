@@ -10,9 +10,9 @@ It comes with OOP, Timers, a Debugging helper, etc. All modules can be seen [her
 ## Table of contents
 - [Installation](README#Installation)
 - [Modules](README#Modules)
-    - [W.I.P](README#W.I.P:)
-    - [Made](README#Made:)
-    - [Considered](README#Considered:)
+    - [Work in Progress](<README#Work in Progress modules>)
+    - [Made](<README#Made modules>)
+    - [Considered](<README#Considered modules>)
 - [Roadmap](README#Roadmap)
 - [More information](<README#More information>)
     - [Inspiration](README#Inspiration)
@@ -68,15 +68,15 @@ end
 ```
 
 # Modules
-### W.I.P:
+### Work in Progress modules
 - **Math**: Useful math functions
 > NOTE: Modules may be added in the future
-### Made:
+### Made modules
 - **Debug**: Helps to debug with an `assert` function, various types of messages, a *"choose statement"* that displays a message or other depending on a boolean; etc.
 - **Timer**: Allows to create timers, has an automatic `update` method and an `onEnd` method that you can customize
 - **OOP**: Class system, has: objects *(obviously)*, subclasses, *"merging"* and *"cloning"* classes; etc.
 - **Vector2**: Simple vec2 system
-### Considered:
+### Considered modules
 - Message bus
 
 #### Ideas
