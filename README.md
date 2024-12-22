@@ -8,7 +8,14 @@ It comes with OOP, Timers, a Debugging helper, etc. All modules can be seen [her
 > note: Love2d tools is **NOT** perfect, and you should know that bugs can occur and that it is currently **Work In Progress**.
 
 ## Table of contents
-
+- [Installation](README#Installation)
+- [Modules](README#Modules)
+- [Roadmap](README#Roadmap)
+- [More information](<README#More information>)
+    - [Inspiration](README#Inspiration)
+    - [Contributing](README#Contributing)
+- [Making modules](<README#Making modules>)
+- [Links](README#Links)
 
 ## Installation
 1. Clone the repository
