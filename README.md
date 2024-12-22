@@ -99,6 +99,7 @@ To contribute to the project, follow these steps:
 3. Make a pull request
 
 I will try to answer as fast as posible. If i don't answer, [send me an email](mailto:Nykenik24@proton.me).
+> If the link doesn't work, my email is Nykenik24@proton.me
 
 # Making modules
 I'll explain to you how i make every module. This can help if you want to [contribute](README.md#Contributing).
