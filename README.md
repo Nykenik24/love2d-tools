@@ -10,6 +10,9 @@ It comes with OOP, Timers, a Debugging helper, etc. All modules can be seen [her
 ## Table of contents
 - [Installation](README#Installation)
 - [Modules](README#Modules)
+    - [W.I.P](README#W.I.P:)
+    - [Made](README#Made:)
+    - [Considered](README#Considered:)
 - [Roadmap](README#Roadmap)
 - [More information](<README#More information>)
     - [Inspiration](README#Inspiration)
