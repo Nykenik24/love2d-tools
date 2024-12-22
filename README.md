@@ -7,6 +7,9 @@ experience a little bit better by providing useful tools that almost every game 
 It comes with OOP, Timers, a Debugging helper, etc. All modules can be seen [here](README#Modules).
 > note: Love2d tools is **NOT** perfect, and you should know that bugs can occur and that it is currently **Work In Progress**.
 
+## Table of contents
+
+
 ## Installation
 1. Clone the repository
 ```bash
@@ -120,13 +123,13 @@ end
 local M_class = class(M)
 return M_class
 ```
-But, wait. If you view the modules that are classes, you will see how they have a `new()` method being returned.
+But, wait. If you see the modules that are classes, you will notice how they have a `new()` method being returned.
 ```lua
 local function new()
     return M_class:new()
 end
 ```
-Some modules have a variable declared when creating a new object
+You can also see how some modules have variables bein choosen by the user when creating a new object.
 ```lua
 local function new(a, b)
     local obj = M_class:new()
@@ -137,7 +140,7 @@ local function new(a, b)
 end
 ```
 ### 4. Documenting
-Here i just use lua annotations of their default lsp that everyone uses to make using the modules easier and not needing former documentation in some documentation host like `readthedocs`.
+Here i just use lua annotations of the default lsp that everyone uses to make using the modules easier and not needing former documentation in some host like `readthedocs`.
 ```lua
 ---@param a number Number "a"
 ---@param b number Number "b"
