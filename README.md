@@ -135,8 +135,6 @@ what every module does looking at the file name.
 ### 2. Write the module base
 Every module has this base:
 ```lua
---line below is needed to document the modules
----@class ModuleName
 local M = {}
 
 return M
@@ -187,6 +185,18 @@ Here i just use lua annotations of the default `lsp` *(language server)* to make
 ---@return number Sum
 function M.Add(a, b)
     return a + b
+end
+```
+To add documentation you need to make the `M` variable a class with annotations. If you are using a `new()` method, make it return the module's annotation class:
+```lua
+---@class Example
+local M = {}
+local class = require("modules.class")
+local M_class = class(M)
+
+---@return Example
+local function new()
+    return M_class:new()
 end
 ```
 ### 5. Final steps
