@@ -68,25 +68,41 @@ end
 ```
 
 # Modules
+Here all modules are listed.\
+\
+If you contribute making a module, list it here with this format:
+```markdown
+### Made modules
+- **ModuleName** (`filename`): Brief description.
+```
+
 ### Work in Progress modules
-- **Math**: Useful math functions
+- **Database** (`database`): Database-like data managing system.
+- **MessageBus** (`message_bus`): Message bus that handles publishers and suscribers.
+- **Easing** (`easing`): Easing helper to make smoother movement or ease values.
+- **StateMachine** (`state`): State machine that handles different states
 > NOTE: Modules may be added in the future
 ### Made modules
-- **Debug**: Helps to debug with an `assert` function, various types of messages, a *"choose statement"* that displays a message or other depending on a boolean; etc.
-- **Timer**: Allows to create timers, has an automatic `update` method and an `onEnd` method that you can customize
-- **OOP**: Class system, has: objects *(obviously)*, subclasses, *"merging"* and *"cloning"* classes; etc.
-- **Vector2**: Simple vec2 system
+- **Debug** (`debug`): Helps to debug with an `assert` function, various types of messages, a *"choose statement"* that displays a message or other depending on a boolean; etc.
+- **Timer** (`timer`): Allows to create timers, has an automatic `update` method and an `OnEnd` method that you can customize.
+- **OOP** (`class`): Class system, has: objects *(obviously)*, subclasses, *"merging"* and *"cloning"* classes; etc.
+- **Vector2** (`vec2`): Simple vec2 system.
+- **Math** (`math`): Useful math functions not present in `lua` and `love2d`.
 ### Considered modules
-- Message bus
+New ideas will be added here before being added to W.I.P modules.
 
 #### Ideas
 If you have any module idea open an issue and i will try to answer.
 
 # Roadmap
-- Document nicely every method.
-- ~Make every module have the same code structure.~
-- ~Merge all similar modules.~ 
-- Finish all modules.
+- Finish all currently W.I.P modules.
+    - Database
+    - Message bus
+    - Easing
+    - State machine
+- Extend modules:
+    - Debug
+    - Vector2
 
 # More information
 ## Inspiration
@@ -103,10 +119,12 @@ I will try to answer as fast as posible. If i don't answer, [send me an email](m
 
 ### Contributing rules
 1. Check the code before making the pull request\
-I am not a code reviewer. I will try to check the code that is merged, but errors can go trough.
+> I am not a code reviewer. I will try to check the code that is merged, but errors can go trough.
 2. Try to follow the steps [below](<README.md#Making modules>) when creating the module.
-3. Document every method and be consisent with naming conventions.
+3. Document every method and variable and be consisent with naming conventions.
 4. If you are going to make the module a class, `return` a `new()` method, not the class.
+5. Comments have to be brief.
+6. Make documentation descriptions short and understandable.
 
 # Making modules
 I'll explain to you how i make every module. This can help if you want to [contribute](README.md#Contributing).
@@ -117,6 +135,8 @@ what every module does looking at the file name.
 ### 2. Write the module base
 Every module has this base:
 ```lua
+--line below is needed to document the modules
+---@class ModuleName
 local M = {}
 
 return M
