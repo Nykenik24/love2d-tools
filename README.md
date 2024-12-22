@@ -140,7 +140,7 @@ local function new(a, b)
 end
 ```
 ### 4. Documenting
-Here i just use lua annotations of the default lsp that everyone uses to make using the modules easier and not needing former documentation in some host like `readthedocs`.
+Here i just use lua annotations of the default `lsp` *(language server)* to make using the modules easier and not needing former documentation in some host like `readthedocs`.
 ```lua
 ---@param a number Number "a"
 ---@param b number Number "b"
