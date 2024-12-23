@@ -8,7 +8,7 @@ local Tools = {
 	---@type Math
 	math = require(getScriptFolder() .. "modules.math"),
 	---@type Database
-	database = require(getScriptFolder() .. "modules.database"),
+	database = require(getScriptFolder() .. "modules.database.init"),
 	lib_info = {
 		author = "Nykenik24",
 		url = "https://github.com/Nykenik24/love2d-tools",
@@ -49,13 +49,13 @@ end
 ---@param duration number
 ---@return Timer
 Tools.timer = function(duration)
-	return require(path .. "modules.class")(duration)
+	return require(path .. "modules.timer")(duration)
 end
 
 ---Create a new state machine
 ---@return StateMachine
 Tools.state = function()
-	return require(path .. "modules.class")()
+	return require(path .. "modules.state")()
 end
 
 ---Create a new vector
@@ -63,7 +63,7 @@ end
 ---@param y number
 ---@return Vector2
 Tools.vec2 = function(x, y)
-	return require(path .. "modules.class")(x, y)
+	return require(path .. "modules.vec2")(x, y)
 end
 
 Tools._mt = { _index = Tools }
