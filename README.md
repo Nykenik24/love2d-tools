@@ -79,7 +79,6 @@ If you contribute making a module, list it here with this format:
 ```
 
 ### Work in Progress modules
-- **MessageBus** (`message_bus`): Message bus that handles publishers and suscribers.
 - **Easing** (`easing`): Easing helper to make smoother movement or ease values.
 > NOTE: Modules may be added in the future
 ### Made modules
@@ -90,6 +89,7 @@ If you contribute making a module, list it here with this format:
 - **Math** (`math`): Useful math functions not present in `lua` and `love2d`.
 - **Database** (`database`): Database-like data managing system. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
 - **StateMachine** (`state`): State machine that handles: info, an update function, etc.
+- **MessageBus** (`message_bus`): Message bus that handles publishers and suscribers.
 ### Considered modules
 New ideas will be added here before being added to W.I.P modules.
 
