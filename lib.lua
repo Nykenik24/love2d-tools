@@ -9,6 +9,8 @@ local Tools = {
 	math = require(getScriptFolder() .. "modules.math"),
 	---@type Database
 	database = require(getScriptFolder() .. "modules.database"),
+	---@type messageBus
+	messageBus = require(getScriptFolder() .. "modules.messagebus"),
 	lib_info = {
 		author = "Nykenik24",
 		url = "https://github.com/Nykenik24/love2d-tools",
