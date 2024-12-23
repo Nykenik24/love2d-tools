@@ -29,6 +29,8 @@ Or add it as a submodule **(recommended)**
 ```bash
 git submodule add https://github.com/Nykenik24/love2d-tools.git path/to/library
 ```
+You can also download the latest release, but if you want the latest modules and features, i recomend cloning or adding as a submodule. I don't make a release every time i add a module, only when i
+make patches or release various modules.
 
 2. Require the library in your `main.lua` or the file where you load libraries.
 ```lua
