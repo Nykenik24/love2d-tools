@@ -1,12 +1,14 @@
 local function getScriptFolder() --* get the path from the root folder in which THIS script is running
-    return(debug.getinfo(1, "S").source:sub(2):match("(.*/)"))
+	return (debug.getinfo(1, "S").source:sub(2):match("(.*/)"))
 end
 local Tools = {
-	debug = require(getScriptFolder().."modules.debug"),
-	class = require(getScriptFolder().."modules.class"),
-	timer = require(getScriptFolder().."modules.timer"),
-	math = require(getScriptFolder().."modules.math"),
-	database = require(getScriptFolder().."modules.database"),
+	debug = require(getScriptFolder() .. "modules.debug"),
+	class = require(getScriptFolder() .. "modules.class"),
+	timer = require(getScriptFolder() .. "modules.timer"),
+	math = require(getScriptFolder() .. "modules.math"),
+	database = require(getScriptFolder() .. "modules.database"),
+	statemachine = require(getScriptFolder() .. "modules.state"),
+	vec2 = require(getScriptFolder() .. "modules.vec2"),
 	lib_info = {
 		author = "Nykenik24",
 		url = "https://github.com/Nykenik24/love2d-tools",

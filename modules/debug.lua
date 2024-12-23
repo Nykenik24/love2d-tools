@@ -1,4 +1,4 @@
----@class M
+---@class DebugUtil
 ---@field regular function Regular message.
 ---@field trace function Trace message.
 ---@field debug function Debug message.

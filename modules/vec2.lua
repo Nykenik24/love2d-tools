@@ -108,7 +108,7 @@ end
 
 local M_class = class(M)
 
----Create a new vector
+--Create a new vector
 ---@param x number
 ---@param y number
 ---@return Vector2
