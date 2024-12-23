@@ -1,4 +1,7 @@
-local class = require("modules.class")
+local function getScriptFolder() --* get the path from the root folder in which THIS script is running
+	return (debug.getinfo(1, "S").source:sub(2):match("(.*/)"))
+end
+local class = require(getScriptFolder() .. "class")
 
 ---@class Vector2
 ---@field x number x coordinate
