@@ -1,14 +1,14 @@
 local function getScriptFolder() --* get the path from the root folder in which THIS script is running
 	return (debug.getinfo(1, "S").source:sub(2):match("(.*/)"))
 end
+local path = getScriptFolder()
 local Tools = {
+	---@type DebugUtil
 	debug = require(getScriptFolder() .. "modules.debug"),
-	class = require(getScriptFolder() .. "modules.class"),
-	timer = require(getScriptFolder() .. "modules.timer"),
+	---@type Math
 	math = require(getScriptFolder() .. "modules.math"),
+	---@type Database
 	database = require(getScriptFolder() .. "modules.database"),
-	statemachine = require(getScriptFolder() .. "modules.state"),
-	vec2 = require(getScriptFolder() .. "modules.vec2"),
 	lib_info = {
 		author = "Nykenik24",
 		url = "https://github.com/Nykenik24/love2d-tools",
@@ -37,6 +37,34 @@ SOFTWARE.
 	]],
 	},
 }
+
+---Create a new class
+---@param attributes table
+---@return Class
+Tools.class = function(attributes)
+	return require(path .. "modules.class")(attributes)
+end
+
+---Create a new timer
+---@param duration number
+---@return Timer
+Tools.timer = function(duration)
+	return require(path .. "modules.class")(duration)
+end
+
+---Create a new state machine
+---@return StateMachine
+Tools.state = function()
+	return require(path .. "modules.class")()
+end
+
+---Create a new vector
+---@param x number
+---@param y number
+---@return Vector2
+Tools.vec2 = function(x, y)
+	return require(path .. "modules.class")(x, y)
+end
 
 Tools._mt = { _index = Tools }
 

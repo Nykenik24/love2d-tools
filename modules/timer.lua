@@ -59,8 +59,8 @@ end
 
 local M_class = class(M)
 
----Create a new timer.
----@param duration integer
+---Create a new timer
+---@param duration number
 ---@return Timer
 local function new(duration)
 	local timer_obj = M_class:new()
