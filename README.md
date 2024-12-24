@@ -1,4 +1,4 @@
-# Love2d tools 💪
+# Love2d tools 🛠
 > Love2d tools is inspired by [batteries.lua](https://github.com/1bardesign/batteries/).
 
 **Love2d tools** *(or love2d-tools)* is a series of **[LOVE2D game framework](https://love2d.org)** utilities to make developing games with Love2d easier and faster. It can make your game developing
