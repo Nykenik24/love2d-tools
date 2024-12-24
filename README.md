@@ -94,7 +94,7 @@ If you contribute making a module, list it here with this format:
 
 ### Considered modules
 *New ideas will be added here before being added to W.I.P modules.*\
-\
+
 - Input (will most likely be added) 
 - Simple JSON parser
 
