@@ -93,17 +93,21 @@ If you contribute making a module, list it here with this format:
 - **Logger** (`logger`): Logging module that uses a separate thread for minimum performance impact. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
 
 ### Considered modules
-New ideas will be added here before being added to W.I.P modules.
+*New ideas will be added here before being added to W.I.P modules.*\
+\
+- Input (will most likely be added) 
+- Simple JSON parser
+
 
 #### Ideas
 If you have any module idea open an issue and i will try to answer.
 
 # Roadmap
 - Finish all currently W.I.P modules.
-    - Database
-    - Message bus
+    - ~~Database~~
+    - ~~Message bus~~
     - Easing
-    - State machine
+    - ~~State machine~~
 - Extend modules:
     - Debug
     - Vector2
