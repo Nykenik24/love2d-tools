@@ -3,14 +3,17 @@ local function getScriptFolder() --* get the path from the root folder in which 
 end
 local path = getScriptFolder()
 local Tools = {
+	--? edited to use the path variable
 	---@type DebugUtil
-	debug = require(getScriptFolder() .. "modules.debug"),
+	debug = require(path .. "modules.debug"),
 	---@type Math
-	math = require(getScriptFolder() .. "modules.math"),
+	math = require(path .. "modules.math"),
 	---@type Database
-	database = require(getScriptFolder() .. "modules.database"),
+	database = require(path .. "modules.database"),
 	---@type messageBus
-	messageBus = require(getScriptFolder() .. "modules.messagebus"),
+	messageBus = require(path .. "modules.messagebus"),
+	---@type logger
+	logger = require(path .. "modules.logger"),
 	lib_info = {
 		author = "Nykenik24",
 		url = "https://github.com/Nykenik24/love2d-tools",
