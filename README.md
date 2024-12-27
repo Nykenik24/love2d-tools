@@ -81,6 +81,7 @@ If you contribute making a module, list it here with this format:
 ### Work in Progress modules
 - **Easing** (`easing`): Easing helper to make smoother movement or ease values.
 - **Functional** (`functional`): Common functional programming functions like map, filter, etc. 
+- **Input** (`input`): Mouse/keyboard input handler.
 > NOTE: Modules may be added in the future
 ### Made modules
 - **Debug** (`debug`): Helps to debug with an `assert` function, various types of messages, a *"choose statement"* that displays a message or other depending on a boolean; etc.
@@ -96,7 +97,6 @@ If you contribute making a module, list it here with this format:
 ### Considered modules
 *New ideas will be added here before being added to W.I.P modules.*
 
-- Input (will most likely be added) 
 - Simple JSON parser
 
 
@@ -109,6 +109,8 @@ If you have any module idea open an issue and i will try to answer.
     - ~~Message bus~~
     - Easing
     - ~~State machine~~
+    - Input
+    - Functional
 - Extend modules:
     - Debug
     - Vector2
