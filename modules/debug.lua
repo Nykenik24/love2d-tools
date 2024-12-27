@@ -11,15 +11,15 @@
 ---@field _chained table Methods for chained messages
 local M = {}
 
----@alias log_types
----| `"regular"`
----| `"trace"`
----| `"debug"`
----| `"info"`
----| `"ok"`
----| `"warn"`
----| `"error"`
----| `"fatal"`
+-- ---@alias log_types
+-- ---| `"regular"`
+-- ---| `"trace"`
+-- ---| `"debug"`
+-- ---| `"info"`
+-- ---| `"ok"`
+-- ---| `"warn"`
+-- ---| `"error"`
+-- ---| `"fatal"`
 local types = {
 	regular = "\27[37m",
 	trace = "\27[34m",
