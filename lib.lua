@@ -14,8 +14,6 @@ end
 local path = getScriptFolder()
 local Tools = {
 	-- NOTE: edited to use the path variable
-	---@type DebugUtil
-	debug = require(path .. "modules.debug"),
 	---@type Math
 	math = require(path .. "modules.math"),
 	---@type Database
