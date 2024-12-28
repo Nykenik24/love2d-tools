@@ -7,6 +7,12 @@ experience a little bit better by providing useful tools that almost every game 
 It comes with OOP, Timers, a Debugging helper, etc. All modules can be seen [here](<README.md#Made modules>).
 > note: Love2d tools is **NOT** perfect, and you should know that bugs can occur and that it is currently **Work In Progress**.
 
+### Disclaimer
+All modules, methods, variables, etc. are subject to change. Breaking changes **will try to be avoided**, **but**, if they are necessary a backup of the current version will be made so you can
+download it in case you update by accident. If any pull request that makes a breaking change is merged, a release with the previous version will be added.\
+\
+If a breaking change is not fixed, the previous version is not backed up or any other issue related to breaking changes, [open an issue](https://github.com/Nykenik24/love2d-tools/issues).
+
 ## Table of contents
 - [Installation](README.md#Installation)
 - [Modules](README.md#Modules)
