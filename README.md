@@ -93,7 +93,7 @@ If you contribute making a module, list it here with this format:
 - **Timer** (`timer`): Allows to create timers, has an automatic `update` method and an `OnEnd` method that you can customize.
 - **OOP** (`class`): Class system, has: objects *(obviously)*, subclasses, *"merging"* and *"cloning"* classes; etc.
 - **Vector2** (`vec2`): Simple vec2 system.
-- **Math** (`math`): Useful math functions not present in `lua` and `love2d`.
+- **Mathx** (`math`): Useful math functions not present in `lua` and `love2d`.
 - **Database** (`database`): Database-like data managing system. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
 - **StateMachine** (`state`): State machine that handles: info, an update function, etc.
 - **MessageBus** (`messagebus`): Message bus that handles publishers and suscribers. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
