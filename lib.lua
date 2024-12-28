@@ -24,6 +24,8 @@ local Tools = {
 	message_bus = require(path .. "modules.messagebus"),
 	---@type logger
 	logger = require(path .. "modules.logger"),
+	---@type InputHandler
+	input = require(path .. "modules.input"),
 	lib_info = {
 		author = "Nykenik24",
 		url = "https://github.com/Nykenik24/love2d-tools",
