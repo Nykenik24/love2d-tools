@@ -81,42 +81,51 @@ Here all modules are listed.\
 \
 If you contribute making a module, list it here with this format:
 ```markdown
-### Made modules
+## Made modules
 - **ModuleName** (`filename`): Brief description.
 ```
 
-### Work in Progress modules
-- **Debug** (`debug`): Basic debug utility with assert functions.
+## Work in Progress modules
+- **Debug** (`debug`): Basic debug utility with assert functions.**Category**: Development helpers.
+- **Tablex** (`table`): Table handling extension. **Category**: Lua extensions.
+- **Stringx** (`string`): String handling extension. **Category**: Lua extensions.
+- **Set** (`set`): Set implementation. **Category**: Data managing.
 > NOTE: Modules may be added in the future
-### Made modules
-- **Timer** (`timer`): Allows to create timers, has an automatic `update` method and an `OnEnd` method that you can customize.
-- **OOP** (`class`): Class system, has: objects *(obviously)*, subclasses, *"merging"* and *"cloning"* classes; etc.
-- **Vector2** (`vec2`): Simple vec2 system.
-- **Mathx** (`math`): Useful math functions not present in `lua` and `love2d`.
-- **Database** (`database`): Database-like data managing system. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
-- **StateMachine** (`state`): State machine that handles: info, an update function, etc.
-- **MessageBus** (`messagebus`): Message bus that handles publishers and suscribers. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
-- **Logger** (`logger`): Logging module that uses a separate thread for minimum performance impact. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
-- **Input** (`input`): Mouse/keyboard input helper.
-- **Easing** (`easing`): Easing helper to make smoother movement or ease values. Licenses of used resources in [modules/licenses](https://github.com/Nykenik24/love2d-tools/tree/main/modules/licenses).
+## Made modules
 
-### Considered modules
+### General utilities
+- **OOP** (`class`): Class system, has: objects *(obviously)*, subclasses, *"merging"* and *"cloning"* classes; etc.
+- **Timer** (`timer`): Allows to create timers, has an automatic `update` method and an `OnEnd` method that you can customize.
+- **Input** (`input`): Mouse/keyboard input helper.
+
+### Event handling
+- **MessageBus** (`messagebus`): Message bus that handles publishers and suscribers. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
+
+### Geometry and mathematics
+- **Easing** (`easing`): Easing helper to make smoother movement or ease values. Licenses of used resources in [modules/licenses](https://github.com/Nykenik24/love2d-tools/tree/main/modules/licenses).
+- **Vector2** (`vec2`): Simple vec2 system.
+
+### Lua extensions
+- **Mathx** (`math`): Useful math functions not present in `lua` and `love2d`.
+
+### Development helpers
+- **Logger** (`logger`): Logging module that uses a separate thread for minimum performance impact. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
+
+### Data managing
+- **StateMachine** (`state`): State machine that handles: info, an update function, etc.
+- **Database** (`database`): Database-like data managing system. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
+
+## Considered modules
 *New ideas will be added here before being added to W.I.P modules.*
 
 - Simple JSON parser
 
 
-#### Ideas
-If you have any module idea open an issue and i will try to answer.
+### Ideas
+If you have any module idea open an issue and i will try to answer and implement your idea.
 
 # Roadmap
 - Finish all currently W.I.P modules.
-    - ~Database~
-    - ~Message bus~
-    - ~Easing~
-    - ~State machine~
-    - ~Input~
-    - Functional
 
 # More information
 ## Inspiration
