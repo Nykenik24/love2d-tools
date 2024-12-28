@@ -1,9 +1,19 @@
+--[[ 
+!!! IMPORTANT !!!
+THIS FILE DOES NOT NEED TO BE MODIFIED FOR ANYTHING THAT ISN'T ADDING/REMOVING A MODULE FROM THE LIBRARY.
+IF YOU WANT TO MODIFY A MODULE, MODIFY THE FILE IN "modules/<module_name>.lua".
+
+If you want to add a module:
+- Add it to "Tools" if it is a regular module
+- Make a function in "Tools" if it is a class
+All module names have to be lowercase and "snake_case" has to be used.
+-- ]]
 local function getScriptFolder() --* get the path from the root folder in which THIS script is running
 	return (debug.getinfo(1, "S").source:sub(2):match("(.*/)"))
 end
 local path = getScriptFolder()
 local Tools = {
-	--? edited to use the path variable
+	-- NOTE: edited to use the path variable
 	---@type DebugUtil
 	debug = require(path .. "modules.debug"),
 	---@type Math
@@ -11,7 +21,7 @@ local Tools = {
 	---@type Database
 	database = require(path .. "modules.database"),
 	---@type messageBus
-	messageBus = require(path .. "modules.messagebus"),
+	message_bus = require(path .. "modules.messagebus"),
 	---@type logger
 	logger = require(path .. "modules.logger"),
 	lib_info = {
