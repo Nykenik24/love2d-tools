@@ -5,14 +5,14 @@ end
 local mathx = require(getScriptFolder() .. "math")
 
 ---@class EasingHelper
-local easing = {}
+local M = {}
 
 ---Linear interpolation between two values
 ---@param start number Starting value
 ---@param ending number Ending value
 ---@param factor number Interpolation factor. Range: 0-1
 ---@return number Interpolated Interpolated value
-function easing.LinearInterpolation(start, ending, factor)
+function M.LinearInterpolation(start, ending, factor)
 	return mathx.Lerp(start, ending, factor)
 end
 
@@ -21,7 +21,7 @@ end
 ---@param edge_2 number Upper edge
 ---@param val number Target value
 ---@return number Interpolated Smoothed value
-function easing.SmoothInterpolation(edge_1, edge_2, val)
+function M.SmoothInterpolation(edge_1, edge_2, val)
 	local clamp = mathx.Clamp
 	val = clamp((val - edge_1) / (edge_2 - edge_1), 0.0, 0.1)
 	return (val ^ 2) * (3 - 2 * val)
@@ -629,4 +629,4 @@ function OutInBounce(t, b, c, d)
 	end
 end
 
-return easing
+return M

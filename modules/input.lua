@@ -1,7 +1,7 @@
 ---@class InputHandler
 ---@field mapped KeyBind[] Mapped keys
-local input = {}
-input.mapped = {}
+local M = {}
+M.mapped = {}
 
 -- ##############
 -- ## KEYBOARD ##
@@ -11,7 +11,7 @@ input.mapped = {}
 ---@param key string Key
 ---@param func function Function
 ---@param ...? table Function arguments
-function input.Map(key, func, ...)
+function M.Map(key, func, ...)
 	local arg = { ... }
 
 	---@class KeyBind
@@ -27,13 +27,13 @@ function input.Map(key, func, ...)
 		end
 	end
 
-	input.mapped[key] = keybind
+	M.mapped[key] = keybind
 	return keybind
 end
 
 ---Update all keybinds.
 ---@param current string Current key
-function input:UpdateKeys(current)
+function M:UpdateKeys(current)
 	for key, keybind in pairs(self.mapped) do
 		if current == key then
 			if #keybind.args > 0 then
@@ -55,7 +55,7 @@ end
 ---@param x2 number Right side
 ---@param y2 number Bottom
 ---@return boolean Hovering
-function input.IsHovering(x1, y1, x2, y2)
+function M.IsHovering(x1, y1, x2, y2)
 	local cx, cy = love.mouse.getPosition()
 	return (cx > x1 and cx < x2 and cy > y1 and cy < y2)
 end
@@ -63,7 +63,7 @@ end
 ---Returns if mouse is being holded and the mouse button holded.
 ---@return boolean Holded False if not being holded
 ---@return integer Button 0 if not being holded
-function input.IsHoldingMouse()
+function M.IsHoldingMouse()
 	local isDown = love.mouse.isDown
 	if isDown(1) then
 		return true, 1
@@ -84,7 +84,7 @@ end
 ---Returns if a mouse button is being holded
 ---@param button MouseButton
 ---@return boolean Holded
-function input.MouseButtonHolded(button)
+function M.MouseButtonHolded(button)
 	if button > 3 then
 		return false
 	elseif button < 1 then
@@ -105,9 +105,9 @@ end
 ---@param ...? table Arguments
 ---@return boolean Hovering
 ---@return nil|any Returned Values returned by the function, nil if not hovered
-function input.IfHovering(area, func, ...)
+function M.IfHovering(area, func, ...)
 	local arg = { ... }
-	if input.IsHovering(area.x1, area.y1, area.x2, area.y2) then
+	if M.IsHovering(area.x1, area.y1, area.x2, area.y2) then
 		if #arg > 0 then
 			return true, func(arg)
 		else
@@ -118,4 +118,4 @@ function input.IfHovering(area, func, ...)
 	end
 end
 
-return input
+return M
