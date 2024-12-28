@@ -79,7 +79,6 @@ If you contribute making a module, list it here with this format:
 ```
 
 ### Work in Progress modules
-- **Easing** (`easing`): Easing helper to make smoother movement or ease values.
 - **Functional** (`functional`): Common functional programming functions like map, filter, etc. 
 > NOTE: Modules may be added in the future
 ### Made modules
@@ -93,6 +92,7 @@ If you contribute making a module, list it here with this format:
 - **MessageBus** (`messagebus`): Message bus that handles publishers and suscribers. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
 - **Logger** (`logger`): Logging module that uses a separate thread for minimum performance impact. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
 - **Input** (`input`): Mouse/keyboard input helper.
+- **Easing** (`easing`): Easing helper to make smoother movement or ease values. Licenses of used resources in [modules/licenses](https://github.com/Nykenik24/love2d-tools/tree/main/modules/licenses).
 
 ### Considered modules
 *New ideas will be added here before being added to W.I.P modules.*
