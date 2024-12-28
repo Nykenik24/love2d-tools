@@ -100,6 +100,7 @@ If you contribute making a module, list it here with this format:
 
 ### Event handling
 - **MessageBus** (`messagebus`): Message bus that handles publishers and suscribers. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
+- **StateMachine** (`state`): State machine that handles: info, an update function, etc.
 
 ### Geometry and mathematics
 - **Easing** (`easing`): Easing helper to make smoother movement or ease values. Licenses of used resources in [modules/licenses](https://github.com/Nykenik24/love2d-tools/tree/main/modules/licenses).
@@ -112,7 +113,6 @@ If you contribute making a module, list it here with this format:
 - **Logger** (`logger`): Logging module that uses a separate thread for minimum performance impact. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
 
 ### Data managing
-- **StateMachine** (`state`): State machine that handles: info, an update function, etc.
 - **Database** (`database`): Database-like data managing system. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
 
 ## Considered modules
