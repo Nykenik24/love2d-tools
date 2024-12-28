@@ -105,15 +105,12 @@ If you have any module idea open an issue and i will try to answer.
 
 # Roadmap
 - Finish all currently W.I.P modules.
-    - ~~Database~~
-    - ~~Message bus~~
-    - Easing
-    - ~~State machine~~
-    - Input
+    - ~Database~
+    - ~Message bus~
+    - ~Easing~
+    - ~State machine~
+    - ~Input~
     - Functional
-- Extend modules:
-    - Debug
-    - Vector2
 
 # More information
 ## Inspiration
