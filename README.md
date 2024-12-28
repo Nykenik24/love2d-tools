@@ -9,7 +9,8 @@ It comes with OOP, Timers, a Debugging helper, etc. All modules can be seen [her
 
 ### Disclaimer
 All modules, methods, variables, etc. are subject to change. Breaking changes **will try to be avoided**, **but**, if they are necessary a backup of the current version will be made so you can
-download it in case you update by accident. If any pull request that makes a breaking change is merged, a release with the previous version will be added.\
+download it in case you update by accident. If any pull request that makes a breaking change is merged, a release with the previous version will be added. This means that **you** are responsible
+for going to the previous version if your project breaks\
 \
 If a breaking change is not fixed, the previous version is not backed up or any other issue related to breaking changes, [open an issue](https://github.com/Nykenik24/love2d-tools/issues).
 
