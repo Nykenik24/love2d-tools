@@ -86,10 +86,9 @@ If you contribute making a module, list it here with this format:
 ```
 
 ### Work in Progress modules
-- **Functional** (`functional`): Common functional programming functions like map, filter, etc. 
+- **Debug** (`debug`): Basic debug utility with assert functions.
 > NOTE: Modules may be added in the future
 ### Made modules
-- **Debug** (`debug`): Helps to debug with an `assert` function, various types of messages, a *"choose statement"* that displays a message or other depending on a boolean; etc.
 - **Timer** (`timer`): Allows to create timers, has an automatic `update` method and an `OnEnd` method that you can customize.
 - **OOP** (`class`): Class system, has: objects *(obviously)*, subclasses, *"merging"* and *"cloning"* classes; etc.
 - **Vector2** (`vec2`): Simple vec2 system.
