@@ -81,7 +81,6 @@ If you contribute making a module, list it here with this format:
 ### Work in Progress modules
 - **Easing** (`easing`): Easing helper to make smoother movement or ease values.
 - **Functional** (`functional`): Common functional programming functions like map, filter, etc. 
-- **Input** (`input`): Mouse/keyboard input handler.
 > NOTE: Modules may be added in the future
 ### Made modules
 - **Debug** (`debug`): Helps to debug with an `assert` function, various types of messages, a *"choose statement"* that displays a message or other depending on a boolean; etc.
@@ -93,6 +92,7 @@ If you contribute making a module, list it here with this format:
 - **StateMachine** (`state`): State machine that handles: info, an update function, etc.
 - **MessageBus** (`messagebus`): Message bus that handles publishers and suscribers. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
 - **Logger** (`logger`): Logging module that uses a separate thread for minimum performance impact. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
+- **Input** (`input`): Mouse/keyboard input helper.
 
 ### Considered modules
 *New ideas will be added here before being added to W.I.P modules.*
