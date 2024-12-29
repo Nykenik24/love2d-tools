@@ -101,7 +101,7 @@ If you contribute making a module, list it here with this format:
 
 ### Development helpers
 - **Logger** (`logger`): Logging module that uses a separate thread for minimum performance impact. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
-- **Debug** (`debug`): Basic debug utility with assert functions.**Category**: Development helpers.
+- **Debug** (`debug`): Basic debug utility with assert functions.
 
 ### Data managing
 - **Database** (`database`): Database-like data managing system. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
