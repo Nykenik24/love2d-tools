@@ -2,10 +2,10 @@
 local test = {}
 
 function test.load()
-	VECTOR = require("modules.vec2")(love.graphics.getWidth() / 2, love.graphics.getHeight() / 2)
+	MOUSE = require("modules.vec2")(love.graphics.getWidth() / 2, love.graphics.getHeight() / 2)
 	CENTER = require("modules.vec2")(love.graphics.getWidth() / 2, love.graphics.getHeight() / 2)
 
-	MATH = require("modules.math")
+	MATHX = require("modules.math")
 
 	love.mouse.setGrabbed(true)
 	love.graphics.setDefaultFilter("nearest", "nearest")
@@ -16,10 +16,10 @@ function test.load()
 end
 
 function test.update(dt)
-	VECTOR:Translate(love.mouse.getPosition())
-	VECTOR.angle = MATH.AngleBetweenVectors(VECTOR, CENTER)
+	MOUSE:Translate(love.mouse.getPosition())
+	MOUSE.angle = MATHX.AngleBetweenVectors(MOUSE, CENTER)
 
-	DISTANCE = MATH.DistanceBetweenVectors(VECTOR, CENTER)
+	distance = MATHX.DistanceBetweenVectors(MOUSE, CENTER)
 
 	INFO_STRING = ([[
 Angle: %f
@@ -30,15 +30,15 @@ CENTER Y: %i
 DISTANCE: %f
 VECTOR RELATIVE X: %i
 VECTOR RELATIVE Y: %i
-]]):format(VECTOR.angle, VECTOR.x, VECTOR.y, CENTER.x, CENTER.y, DISTANCE, CENTER.x - DISTANCE, CENTER.y - DISTANCE)
+]]):format(MOUSE.angle, MOUSE.x, MOUSE.y, CENTER.x, CENTER.y, distance, CENTER.x - distance, CENTER.y - distance)
 end
 
 function test.draw()
 	SetColor(0.25, 0.75, 0.25, 1)
-	VECTOR:Draw()
+	MOUSE:Draw()
 
 	SetColor(0.25, 0.25, 0.75, 1)
-	love.graphics.circle("line", CENTER.x, CENTER.y, DISTANCE)
+	love.graphics.circle("line", CENTER.x, CENTER.y, distance)
 
 	--SetColor(0.75, 0.25, 0.25, 1)
 	--love.graphics.rectangle("line", CENTER.x - DISTANCE, CENTER.y - DISTANCE, DISTANCE * 2, DISTANCE * 2)
