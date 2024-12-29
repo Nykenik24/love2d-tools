@@ -46,7 +46,7 @@ local asin = math.asin
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function Linear(t, b, c, d)
+function M.Linear(t, b, c, d)
 	return c * t / d + b
 end
 
@@ -55,7 +55,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function InQuad(t, b, c, d)
+function M.InQuad(t, b, c, d)
 	t = t / d
 	return c * pow(t, 2) + b
 end
@@ -65,7 +65,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function OutQuad(t, b, c, d)
+function M.OutQuad(t, b, c, d)
 	t = t / d
 	return -c * t * (t - 2) + b
 end
@@ -75,7 +75,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function InOutQuad(t, b, c, d)
+function M.InOutQuad(t, b, c, d)
 	t = t / d * 2
 	if t < 1 then
 		return c / 2 * pow(t, 2) + b
@@ -89,11 +89,11 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function OutInQuad(t, b, c, d)
+function M.OutInQuad(t, b, c, d)
 	if t < d / 2 then
-		return OutQuad(t * 2, b, c / 2, d)
+		return M.OutQuad(t * 2, b, c / 2, d)
 	else
-		return InQuad((t * 2) - d, b + c / 2, c / 2, d)
+		return M.InQuad((t * 2) - d, b + c / 2, c / 2, d)
 	end
 end
 
@@ -102,7 +102,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function InCubic(t, b, c, d)
+function M.InCubic(t, b, c, d)
 	t = t / d
 	return c * pow(t, 3) + b
 end
@@ -112,7 +112,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function OutCubic(t, b, c, d)
+function M.OutCubic(t, b, c, d)
 	t = t / d - 1
 	return c * (pow(t, 3) + 1) + b
 end
@@ -122,7 +122,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function InOutCubic(t, b, c, d)
+function M.InOutCubic(t, b, c, d)
 	t = t / d * 2
 	if t < 1 then
 		return c / 2 * t * t * t + b
@@ -137,11 +137,11 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function OutInCubic(t, b, c, d)
+function M.OutInCubic(t, b, c, d)
 	if t < d / 2 then
-		return OutCubic(t * 2, b, c / 2, d)
+		return M.OutCubic(t * 2, b, c / 2, d)
 	else
-		return InCubic((t * 2) - d, b + c / 2, c / 2, d)
+		return M.InCubic((t * 2) - d, b + c / 2, c / 2, d)
 	end
 end
 
@@ -150,7 +150,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function InQuart(t, b, c, d)
+function M.InQuart(t, b, c, d)
 	t = t / d
 	return c * pow(t, 4) + b
 end
@@ -160,7 +160,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function OutQuart(t, b, c, d)
+function M.OutQuart(t, b, c, d)
 	t = t / d - 1
 	return -c * (pow(t, 4) - 1) + b
 end
@@ -170,7 +170,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function InOutQuart(t, b, c, d)
+function M.InOutQuart(t, b, c, d)
 	t = t / d * 2
 	if t < 1 then
 		return c / 2 * pow(t, 4) + b
@@ -185,11 +185,11 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function OutInQuart(t, b, c, d)
+function M.OutInQuart(t, b, c, d)
 	if t < d / 2 then
-		return OutQuart(t * 2, b, c / 2, d)
+		return M.OutQuart(t * 2, b, c / 2, d)
 	else
-		return InQuart((t * 2) - d, b + c / 2, c / 2, d)
+		return M.InQuart((t * 2) - d, b + c / 2, c / 2, d)
 	end
 end
 
@@ -198,7 +198,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function InQuint(t, b, c, d)
+function M.InQuint(t, b, c, d)
 	t = t / d
 	return c * pow(t, 5) + b
 end
@@ -208,7 +208,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function OutQuint(t, b, c, d)
+function M.OutQuint(t, b, c, d)
 	t = t / d - 1
 	return c * (pow(t, 5) + 1) + b
 end
@@ -218,7 +218,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function InOutQuint(t, b, c, d)
+function M.InOutQuint(t, b, c, d)
 	t = t / d * 2
 	if t < 1 then
 		return c / 2 * pow(t, 5) + b
@@ -233,11 +233,11 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function OutInQuint(t, b, c, d)
+function M.OutInQuint(t, b, c, d)
 	if t < d / 2 then
-		return OutQuint(t * 2, b, c / 2, d)
+		return M.OutQuint(t * 2, b, c / 2, d)
 	else
-		return InQuint((t * 2) - d, b + c / 2, c / 2, d)
+		return M.InQuint((t * 2) - d, b + c / 2, c / 2, d)
 	end
 end
 
@@ -246,7 +246,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function InSine(t, b, c, d)
+function M.InSine(t, b, c, d)
 	return -c * cos(t / d * (pi / 2)) + c + b
 end
 
@@ -255,7 +255,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function OutSine(t, b, c, d)
+function M.OutSine(t, b, c, d)
 	return c * sin(t / d * (pi / 2)) + b
 end
 
@@ -264,7 +264,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function InOutSine(t, b, c, d)
+function M.InOutSine(t, b, c, d)
 	return -c / 2 * (cos(pi * t / d) - 1) + b
 end
 
@@ -273,11 +273,11 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function OutInSine(t, b, c, d)
+function M.OutInSine(t, b, c, d)
 	if t < d / 2 then
-		return OutSine(t * 2, b, c / 2, d)
+		return M.OutSine(t * 2, b, c / 2, d)
 	else
-		return InSine((t * 2) - d, b + c / 2, c / 2, d)
+		return M.InSine((t * 2) - d, b + c / 2, c / 2, d)
 	end
 end
 
@@ -286,7 +286,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function InExpo(t, b, c, d)
+function M.InExpo(t, b, c, d)
 	if t == 0 then
 		return b
 	else
@@ -299,7 +299,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function OutExpo(t, b, c, d)
+function M.OutExpo(t, b, c, d)
 	if t == d then
 		return b + c
 	else
@@ -312,7 +312,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function InOutExpo(t, b, c, d)
+function M.InOutExpo(t, b, c, d)
 	if t == 0 then
 		return b
 	end
@@ -333,11 +333,11 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function OutInExpo(t, b, c, d)
+function M.OutInExpo(t, b, c, d)
 	if t < d / 2 then
-		return OutExpo(t * 2, b, c / 2, d)
+		return M.OutExpo(t * 2, b, c / 2, d)
 	else
-		return InExpo((t * 2) - d, b + c / 2, c / 2, d)
+		return M.InExpo((t * 2) - d, b + c / 2, c / 2, d)
 	end
 end
 
@@ -346,7 +346,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function InCirc(t, b, c, d)
+function M.InCirc(t, b, c, d)
 	t = t / d
 	return (-c * (sqrt(1 - pow(t, 2)) - 1) + b)
 end
@@ -356,7 +356,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function OutCirc(t, b, c, d)
+function M.OutCirc(t, b, c, d)
 	t = t / d - 1
 	return (c * sqrt(1 - pow(t, 2)) + b)
 end
@@ -366,7 +366,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function InOutCirc(t, b, c, d)
+function M.InOutCirc(t, b, c, d)
 	t = t / d * 2
 	if t < 1 then
 		return -c / 2 * (sqrt(1 - t * t) - 1) + b
@@ -381,11 +381,11 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function OutInCirc(t, b, c, d)
+function M.OutInCirc(t, b, c, d)
 	if t < d / 2 then
-		return OutCirc(t * 2, b, c / 2, d)
+		return M.OutCirc(t * 2, b, c / 2, d)
 	else
-		return InCirc((t * 2) - d, b + c / 2, c / 2, d)
+		return M.InCirc((t * 2) - d, b + c / 2, c / 2, d)
 	end
 end
 
@@ -394,7 +394,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function InElastic(t, b, c, d, a, p)
+function M.InElastic(t, b, c, d, a, p)
 	if t == 0 then
 		return b
 	end
@@ -430,7 +430,7 @@ end
 ---@param a number Amplitude
 ---@param p number Period
 ---@return number Eased Eased value
-function OutElastic(t, b, c, d, a, p)
+function M.OutElastic(t, b, c, d, a, p)
 	if t == 0 then
 		return b
 	end
@@ -464,7 +464,7 @@ end
 ---@param a number Amplitude
 ---@param p number Period
 ---@return number Eased Eased value
-function InOutElastic(t, b, c, d, a, p)
+function M.InOutElastic(t, b, c, d, a, p)
 	if t == 0 then
 		return b
 	end
@@ -507,11 +507,11 @@ end
 ---@param a number Amplitude
 ---@param p number Period
 ---@return number Eased Eased value
-function OutInElastic(t, b, c, d, a, p)
+function M.OutInElastic(t, b, c, d, a, p)
 	if t < d / 2 then
-		return OutElastic(t * 2, b, c / 2, d, a, p)
+		return M.OutElastic(t * 2, b, c / 2, d, a, p)
 	else
-		return InElastic((t * 2) - d, b + c / 2, c / 2, d, a, p)
+		return M.InElastic((t * 2) - d, b + c / 2, c / 2, d, a, p)
 	end
 end
 
@@ -520,7 +520,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function InBack(t, b, c, d, s)
+function M.InBack(t, b, c, d, s)
 	if not s then
 		s = 1.70158
 	end
@@ -533,7 +533,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function OutBack(t, b, c, d, s)
+function M.OutBack(t, b, c, d, s)
 	if not s then
 		s = 1.70158
 	end
@@ -546,7 +546,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function InOutBack(t, b, c, d, s)
+function M.InOutBack(t, b, c, d, s)
 	if not s then
 		s = 1.70158
 	end
@@ -565,11 +565,11 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function OutInBack(t, b, c, d, s)
+function M.OutInBack(t, b, c, d, s)
 	if t < d / 2 then
-		return OutBack(t * 2, b, c / 2, d, s)
+		return M.OutBack(t * 2, b, c / 2, d, s)
 	else
-		return InBack((t * 2) - d, b + c / 2, c / 2, d, s)
+		return M.InBack((t * 2) - d, b + c / 2, c / 2, d, s)
 	end
 end
 
@@ -578,7 +578,7 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function OutBounce(t, b, c, d)
+function M.OutBounce(t, b, c, d)
 	t = t / d
 	if t < 1 / 2.75 then
 		return c * (7.5625 * t * t) + b
@@ -599,8 +599,8 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function InBounce(t, b, c, d)
-	return c - OutBounce(d - t, 0, c, d) + b
+function M.InBounce(t, b, c, d)
+	return c - M.OutBounce(d - t, 0, c, d) + b
 end
 
 ---@param t number Time/Value, goes from 0 to "d" (Duration)
@@ -608,11 +608,11 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function InOutBounce(t, b, c, d)
+function M.InOutBounce(t, b, c, d)
 	if t < d / 2 then
-		return InBounce(t * 2, 0, c, d) * 0.5 + b
+		return M.InBounce(t * 2, 0, c, d) * 0.5 + b
 	else
-		return OutBounce(t * 2 - d, 0, c, d) * 0.5 + c * 0.5 + b
+		return M.OutBounce(t * 2 - d, 0, c, d) * 0.5 + c * 0.5 + b
 	end
 end
 
@@ -621,11 +621,11 @@ end
 ---@param c number Change/End
 ---@param d number Duration
 ---@return number Eased Eased value
-function OutInBounce(t, b, c, d)
+function M.OutInBounce(t, b, c, d)
 	if t < d / 2 then
-		return OutBounce(t * 2, b, c / 2, d)
+		return M.OutBounce(t * 2, b, c / 2, d)
 	else
-		return InBounce((t * 2) - d, b + c / 2, c / 2, d)
+		return M.InBounce((t * 2) - d, b + c / 2, c / 2, d)
 	end
 end
 
