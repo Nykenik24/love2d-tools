@@ -222,6 +222,14 @@ git commit -m 'Finished module "<module_name>"' # my alias: gcmsg <message>
 git push origin main # my alias: ggpush
 ```
 
+# Tests
+To run tests:
+1. Replace the `test_path` variable with the path of the test you would like to run.
+2. Run `main.lua` with **love**.
+```bash
+love .
+```
+
 # Links
 - Repository link: [github.com/Nykenik24/love2d-tools](https://github.com/Nykenik24/love2d-tools)
 - Love2d forum post: [love2d.org/forums/viewtopic.php?t=96218](https://love2d.org/forums/viewtopic.php?t=96218)

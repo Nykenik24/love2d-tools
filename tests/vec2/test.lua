@@ -1,20 +1,21 @@
 ---@diagnostic disable: duplicate-set-field
+local test = {}
 
-function love.load()
-	VECTOR = require("lib").vec2(love.graphics.getWidth() / 2, love.graphics.getHeight() / 2)
-	CENTER = require("lib").vec2(love.graphics.getWidth() / 2, love.graphics.getHeight() / 2)
+function test.load()
+	VECTOR = require("modules.vec2")(love.graphics.getWidth() / 2, love.graphics.getHeight() / 2)
+	CENTER = require("modules.vec2")(love.graphics.getWidth() / 2, love.graphics.getHeight() / 2)
 
-	MATH = require("lib").math
+	MATH = require("modules.math")
 
 	love.mouse.setGrabbed(true)
 	love.graphics.setDefaultFilter("nearest", "nearest")
-	local font = love.graphics.newFont("assets/font.ttf")
+	local font = love.graphics.newFont("tests/assets/font.ttf")
 	love.graphics.setFont(font)
 
 	SetColor = love.graphics.setColor
 end
 
-function love.update(dt)
+function test.update(dt)
 	VECTOR:Translate(love.mouse.getPosition())
 	VECTOR.angle = MATH.AngleBetweenVectors(VECTOR, CENTER)
 
@@ -32,7 +33,7 @@ VECTOR RELATIVE Y: %i
 ]]):format(VECTOR.angle, VECTOR.x, VECTOR.y, CENTER.x, CENTER.y, DISTANCE, CENTER.x - DISTANCE, CENTER.y - DISTANCE)
 end
 
-function love.draw()
+function test.draw()
 	SetColor(0.25, 0.75, 0.25, 1)
 	VECTOR:Draw()
 
@@ -47,3 +48,5 @@ function love.draw()
 	SetColor(1, 1, 1, 1)
 	love.graphics.print(INFO_STRING, 0, 0, 0, 1)
 end
+
+return test
