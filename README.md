@@ -59,20 +59,11 @@ MyClass = ClassTool {
 }
 MyClass_obj = MyClass:new()
 
-DebugTool.regular(MyClass_obj.smth)
-DebugTool.choose(
-    MyClass_obj._is(MyClass), --Boolean
-    "info", --True message type
-    "error", --False message type
-    "MyClass_obj is a MyClass object", --True message
-    "MyClass_obj isn't a MyClass object" --False message
-)
-
 MyTimer = Timer(5) --5 is the duration of the timer
 MyTimer:Update()
 
 MyTimer.OnEnd = function(self) --will be called every time the timer ends
-    DebugTool.assert(MyClass_obj.other_thing == 5, "MyClass_obj.other_thing isn't five")
+    DebugTool.Equal(MyClass_obj.other_thing, 5)
 end
 ```
 
@@ -86,7 +77,6 @@ If you contribute making a module, list it here with this format:
 ```
 
 ## Work in Progress modules
-- **Debug** (`debug`): Basic debug utility with assert functions.**Category**: Development helpers.
 - **Tablex** (`table`): Table handling extension. **Category**: Lua extensions.
 - **Stringx** (`string`): String handling extension. **Category**: Lua extensions.
 - **Set** (`set`): Set implementation. **Category**: Data managing.
@@ -111,6 +101,7 @@ If you contribute making a module, list it here with this format:
 
 ### Development helpers
 - **Logger** (`logger`): Logging module that uses a separate thread for minimum performance impact. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
+- **Debug** (`debug`): Basic debug utility with assert functions.**Category**: Development helpers.
 
 ### Data managing
 - **Database** (`database`): Database-like data managing system. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
