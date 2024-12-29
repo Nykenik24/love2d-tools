@@ -24,6 +24,8 @@ local Tools = {
 	logger = require(path .. "modules.logger"),
 	---@type InputHandler
 	input = require(path .. "modules.input"),
+	---@type DebugHelper
+	debug = require(path .. "modules.debug"),
 	lib_info = {
 		author = "Nykenik24",
 		url = "https://github.com/Nykenik24/love2d-tools",
