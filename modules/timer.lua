@@ -19,11 +19,11 @@ M.elapsed = false
 ---Update the timer.
 ---@param self table
 ---@param dt integer
----@return integer self.secs Time countdown.
+---@return integer self.seconds Time countdown.
 ---@return boolean elapsed True if the timer ended.
 function M:Update(dt)
 	if self.seconds > 0 then
-		self.seconds = self.secs - dt
+		self.seconds = self.seconds - dt
 	elseif self.seconds < 0 then
 		self.seconds = 0
 		self.elapsed = true
