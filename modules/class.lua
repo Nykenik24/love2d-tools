@@ -13,6 +13,7 @@ function M.new(self)
 		obj[k] = v
 	end
 	obj._is = is
+	obj = setmetatable(obj, self)
 	return obj
 end
 
@@ -70,10 +71,10 @@ end
 ---@param attributes table
 ---@return Class
 function NewClass(attributes)
-	local cls = {
+	local cls = setmetatable({
 		attributes = {},
 		sub = {},
-	}
+	}, M)
 	cls._mt = { _index = cls }
 	for k, v in pairs(attributes) do
 		cls.attributes[k] = v
