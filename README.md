@@ -77,7 +77,6 @@ If you contribute making a module, list it here with this format:
 ```
 
 ## Work in Progress modules
-- **Tablex** (`table`): Table handling extension. **Category**: Lua extensions.
 - **Stringx** (`string`): String handling extension. **Category**: Lua extensions.
 - **Set** (`set`): Set implementation. **Category**: Data managing.
 > NOTE: Modules may be added in the future
@@ -98,6 +97,7 @@ If you contribute making a module, list it here with this format:
 
 ### Lua extensions
 - **Mathx** (`math`): Useful math functions not present in `lua` and `love2d`.
+- **Tablex** (`table`): Table handling extension. **Category**: Lua extensions.
 
 ### Development helpers
 - **Logger** (`logger`): Logging module that uses a separate thread for minimum performance impact. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
