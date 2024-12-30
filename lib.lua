@@ -16,6 +16,8 @@ local Tools = {
 	-- NOTE: edited to use the path variable
 	---@type Math
 	math = require(path .. "modules.math"),
+	---@type TableExtension
+	table = require(path .. "modules.table"),
 	---@type Database
 	database = require(path .. "modules.database"),
 	---@type messageBus
