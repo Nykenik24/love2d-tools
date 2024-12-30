@@ -1,7 +1,7 @@
 ---@class Class
 ---@field attributes table Attributes of the class
 ---@field sub table Subclasses
----@field _mt table Metatable
+---@field id string Class's id
 local M = {}
 
 ---Create new object.
@@ -13,7 +13,7 @@ function M.new(self)
 		obj[k] = v
 	end
 	obj._is = is
-	obj = setmetatable(obj, self)
+	obj.id = self.id
 	return obj
 end
 
@@ -23,7 +23,8 @@ end
 ---@param attributes table Attributes of the subclass
 ---@return Class
 function M.extend(self, name, attributes)
-	self.sub[name] = setmetatable(NewClass(attributes), self._mt)
+	self.sub[name] = NewClass(attributes)
+	self.sub[name].id = self.id
 	return self.sub[name]
 end
 
@@ -33,9 +34,7 @@ end
 ---@return boolean
 ---@diagnostic disable-next-line: lowercase-global
 function is(obj, Class)
-	local obj_mt = getmetatable(obj)
-	local Class_mt = getmetatable(Class._mt)
-	if obj_mt == Class_mt then
+	if obj.id == Class.id then
 		return true
 	else
 		return false
@@ -67,15 +66,43 @@ function M.merge(self, Class2)
 	return NewClass(final)
 end
 
+local function IdGenerator(len)
+	local characters = {
+		"A",
+		"B",
+		"C",
+		"D",
+		"E",
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		0,
+	}
+	local id = ""
+	for _ = 1, len do
+		id = id .. tostring(characters[math.random(1, #characters)])
+	end
+	return id
+end
+
 ---Create a new Class
+---
+---Warning: Creates a new id every time it is called, which can affect performance
+---significantly
 ---@param attributes table
 ---@return Class
 function NewClass(attributes)
-	local cls = setmetatable({
+	local cls = {
 		attributes = {},
 		sub = {},
-	}, M)
-	cls._mt = { _index = cls }
+		id = IdGenerator(8),
+	}
 	for k, v in pairs(attributes) do
 		cls.attributes[k] = v
 	end
