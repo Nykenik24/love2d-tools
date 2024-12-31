@@ -5,8 +5,8 @@ local class = require(getScriptFolder() .. "class")
 
 ---@class Timer
 ---@field orig number Original duration
----@field seconds number Seconds until timer end
----@field rounded_seconds number Rounded seconds until timer end
+---@field seconds number Countdown from `orig` to `0`
+---@field rounded_seconds integer Rounded seconds until timer end
 ---@field elapsed boolean Timer has ended
 ---@field OnEnd function Function called when timer ends
 local M = {}
@@ -18,8 +18,8 @@ M.elapsed = false
 
 ---Update the timer.
 ---@param self table
----@param dt integer
----@return integer self.seconds Time countdown.
+---@param dt number
+---@return number self.seconds Time countdown.
 ---@return boolean elapsed True if the timer ended.
 function M:Update(dt)
 	if self.seconds > 0 then
