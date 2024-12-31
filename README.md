@@ -4,7 +4,9 @@
 **Love2d tools** *(or love2d-tools)* is a series of **[LOVE2D game framework](https://love2d.org)** utilities to make developing games with Love2d easier and faster. It can make your game developing
 experience a little bit better by providing useful tools that almost every game engine has, but Love2d lacks off.\
 \
-It comes with OOP, Timers, a Debugging helper, etc. All modules can be seen [here](<README.md#Made modules>).
+It comes with OOP, Timers, a Debugging helper, etc. All modules can be seen [here](<README.md#Made modules>).\
+\
+Documentation of Love2d tools can be found [here](https://Nykenik24.github.io/docs/love2d-tools).
 > note: Love2d tools is **NOT** perfect, and you should know that bugs can occur and that it is currently **Work In Progress**.
 
 ### Disclaimer
@@ -231,5 +233,5 @@ love .
 ```
 
 # Links
-- Repository link: [github.com/Nykenik24/love2d-tools](https://github.com/Nykenik24/love2d-tools)
-- Love2d forum post: [love2d.org/forums/viewtopic.php?t=96218](https://love2d.org/forums/viewtopic.php?t=96218)
+- Love2d forum post: https://love2d.org/forums/viewtopic.php?t=96218
+- Documentation: https://Nykenik24.github.io/docs/love2d-tools
