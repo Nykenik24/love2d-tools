@@ -27,9 +27,9 @@ function M.SmoothInterpolation(edge_1, edge_2, val)
 	return (val ^ 2) * (3 - 2 * val)
 end
 
---functions from https://github.com/EmmanuelOga/easing/blob/master/lib/easing.lua
---easing equations from http://robertpenner.com/easing/
---both licenses are in the "modules/licenses/" files
+--functions from https://github.com/EmmanuelOga/easing/blob/master/lib/easing.lua.
+--easing equations from http://robertpenner.com/easing/.
+--both licenses are in the "licenses" directory.
 ---@diagnostic disable: unused-local
 
 local pow = math.pow
@@ -40,7 +40,6 @@ local sqrt = math.sqrt
 local abs = math.abs
 local asin = math.asin
 
----Ease linearly
 ---@param t number Time/Value, goes from 0 to "d" (Duration)
 ---@param b number Begin/Start
 ---@param c number Change/End
