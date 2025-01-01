@@ -23,7 +23,7 @@ function M.NewState(self, name, enabled, info)
 	end
 	state.enabled = enabled
 	self.states[name] = state
-	state.update = function()
+	state.update = function(self, dt)
 		print(("State %s update function called"):format(name))
 		print('Modify this function or make it "nil"')
 	end
@@ -55,69 +55,24 @@ function M.GetState(self)
 	end
 end
 
----Checks if a value exists inside a state
+---Checks if a state exists inside the state machine.
 ---@param self StateMachine
 ---@param name string State's name
----@param value any Value
----@param value_name? string Value's name (optional)
----@return boolean Exists True if value exists
-function M.Exists(self, name, value, value_name)
+---@return boolean Exists True if state exists
+function M.Exists(self, name)
 	if self.states[name] then
-		if value_name then
-			if self.states[name][value_name] then
-				return true
-			else
-				return false
-			end
-		else
-			for _, v in pairs(self.states[name]) do
-				if v == value then
-					return true
-				end
-			end
-			return false
-		end
+		return true
 	else
 		return false
 	end
 end
 
----Call the "update" function of all states
+---Call current state's update method.
 ---@param self StateMachine
 ---@param dt? number
----@return boolean Updated True if all states where updated
-function M.UpdateAll(self, dt)
-	for _, state in pairs(self.states) do
-		if type(state.update) == "function" then
-			local update = state.update
-			local no_errors, error_msg
-			if dt then
-				no_errors, error_msg = pcall(update, state, dt)
-			else
-				no_errors, error_msg = pcall(update, state)
-			end
-			if no_errors then
-				if dt then
-					update(state, dt)
-				else
-					update(state)
-				end
-			else
-				error(error_msg)
-			end
-		end
-	end
-	return true
-end
-
----Update only one state
----@param self StateMachine
----@param name string
----@param dt? number
----@return boolean Succes True if the state was updated
-function M.Update(self, name, dt)
-	if self.states[name] then
-		local state = self.states[name]
+function M.Update(self, dt)
+	local state = self:GetState()
+	if state.update then
 		local no_errors, error_msg
 		if dt then
 			no_errors, error_msg = pcall(state.update, state, dt)
@@ -133,9 +88,6 @@ function M.Update(self, name, dt)
 		else
 			error(error_msg)
 		end
-		return true
-	else
-		return false
 	end
 end
 

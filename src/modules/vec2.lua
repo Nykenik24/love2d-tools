@@ -20,8 +20,10 @@ M.magnitude = 0
 function M.Compare(self, b)
 	if self.x > b.x and self.y > b.y then
 		return self
-	else
+	elseif self.x < b.x and self.y < b.y then
 		return b
+	else
+		return self
 	end
 end
 
