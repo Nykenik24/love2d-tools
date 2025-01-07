@@ -8,6 +8,13 @@ function love.load()
 	-- make images scale without blurring
 	love.graphics.setDefaultFilter("nearest", "nearest")
 
+	--logger
+	LOGGER = require("modules.logger")
+	LOGGER.init()
+	LOGGER.startSVC()
+
+	LOGGER.info("Started")
+
 	--Replace with the test you want to run
 	local test_path = "tests.vec2.test"
 	TEST = require(test_path)
