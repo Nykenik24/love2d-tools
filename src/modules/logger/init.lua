@@ -38,7 +38,7 @@ local log_types = {
 	fatal = "\27[35m",
 }
 
----Initializes, call before startSVC
+---Initialize
 function M.init()
 	-- Internal logger state and thread management
 	---@class loggerinternal
