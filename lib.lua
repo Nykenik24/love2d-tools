@@ -85,6 +85,13 @@ Tools.vec2 = function(x, y)
 	return require(path .. "modules.vec2")(x, y)
 end
 
+---Creates a new Set
+---@param ... any Values
+---@return Set Set Created set
+Tools.set = function(...)
+	return require(path .. "modules.set")(...)
+end
+
 Tools._mt = { _index = Tools }
 
 return Tools
