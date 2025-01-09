@@ -38,14 +38,27 @@ local log_types = {
 	fatal = "\27[35m",
 }
 
----Initialize
-function M.init()
-	-- Internal logger state and thread management
-	---@class loggerinternal
-	loggerinternal = {}
-	loggerinternal.write = love.thread.newThread(getScriptFolder() .. "loggerthread.lua") -- Thread to handle logging operations.
-	loggerinternal.datastack = love.thread.getChannel("loggerdata") -- Data channel for sending logs to the thread.
+M.init = function()
+	print("logger.init was removed")
+	if love then
+		if
+			love.window.showMessageBox(
+				"Removed methods",
+				"logger.init was removed, no need to call any init method",
+				"warning"
+			)
+		then
+			error("Love2d tools, logger: logger.init was removed")
+		end
+	else
+		error("need love to use the logger")
+	end
 end
+-- Internal logger state and thread management
+---@class loggerinternal
+loggerinternal = {}
+loggerinternal.write = love.thread.newThread(getScriptFolder() .. "loggerthread.lua") -- Thread to handle logging operations.
+loggerinternal.datastack = love.thread.getChannel("loggerdata") -- Data channel for sending logs to the thread.
 
 M._chained = {}
 M.chain_number = 1
