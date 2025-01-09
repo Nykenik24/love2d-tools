@@ -82,7 +82,6 @@ If you contribute making a module, list it here with this format:
 
 ## Work in Progress modules
 - **Stringx** (`string`): String handling extension. **Category**: Lua extensions.
-- **Set** (`set`): Set implementation. **Category**: Data managing.
 > NOTE: Modules may be added in the future
 ## Made modules
 
@@ -109,6 +108,7 @@ If you contribute making a module, list it here with this format:
 
 ### Data managing
 - **Database** (`database`): Database-like data managing system. Made by *[zalanwastaken](https://github.com/zalanwastaken)*.
+- **Set** (`set`): Simple set implementation.
 
 ## Considered modules
 *New ideas will be added here before being added to W.I.P modules.*
