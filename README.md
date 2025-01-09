@@ -96,7 +96,7 @@ If you contribute making a module, list it here with this format:
 - **StateMachine** (`state`): State machine that handles: info, an update function, etc.
 
 ### Geometry and mathematics
-- **Easing** (`easing`): Easing helper to make smoother movement or ease values. Licenses of used resources in [modules/licenses](https://github.com/Nykenik24/love2d-tools/tree/main/modules/licenses).
+- **Easing** (`easing`): Easing helper to make smoother movement or ease values. Licenses of used resources in the [licenses directory](https://github.com/Nykenik24/love2d-tools/tree/main/licenses).
 - **Vector2** (`vec2`): Simple vec2 system.
 
 ### Lua extensions
