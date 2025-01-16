@@ -3,7 +3,7 @@
 local function idgen(length)
 	length = length or 16
 	local chars = { -- * Small chars
-		"a",
+		"a", --? too long dont you think ? :3
 		"b",
 		"c",
 		"d",
@@ -129,20 +129,9 @@ local bus = {
 			---@return any Content The content of the retrieved message or nil if none found.
 			GetMsg = function(type)
 				if type == nil then
-					for i = 1, #businternal.messages, 1 do
-						if businternal.messages[i].id == id then
-							local content = businternal.messages[i].content
-							table.remove(businternal.messages, i)
-							return content
-						end
-					end
+					return(businternal.messages[id])
 				elseif type == "broadcast" then
-					for i = 1, #businternal.messages, 1 do
-						if businternal.messages[i].id == "ALL" then
-							local content = businternal.messages[i].content
-							return content
-						end
-					end
+					return(businternal.messages["ALL"])
 				end
 			end,
 		}
@@ -152,33 +141,18 @@ local bus = {
 	---@param content any The message content to send.
 	SendMessage = function(id, content)
 		if contains(businternal.ids, id) then
-			businternal.messages[#businternal.messages + 1] = {
-				id = id,
-				content = content,
-			}
+			businternal.messages[id] = content
 		end
 	end,
 	---@param content any The content to broadcast to all subscription points.
 	---@return table Broadcast An object with a position and a method to end the broadcast.
 	Broadcast = function(content)
-		local ourpos = #businternal.messages + 1
-		businternal.messages[#businternal.messages + 1] = {
-			id = "ALL",
-			content = content,
-		}
+		businternal.messages["ALL"] = content
 		return {
-			pos = ourpos,
-			---Ends the broadcast and removes it from the message queue.
+			--! ends all broadcastes
 			EndBroadcast = function()
-				local index = 0
-				for i = 1, #businternal.messages, 1 do
-					if businternal.messages[i].content == content then
-						index = i
-						break
-					end
-				end
-				table.remove(businternal.messages, index)
-			end,
+				businternal.messages["ALL"] = nil
+			end
 		}
 	end,
 }
