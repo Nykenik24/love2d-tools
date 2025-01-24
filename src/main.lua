@@ -10,7 +10,6 @@ function love.load()
 
 	--logger
 	LOGGER = require("modules.logger")
-	LOGGER.init()
 	LOGGER.startSVC()
 
 	LOGGER.info("Started")
