@@ -8,7 +8,6 @@ experience a little bit better by providing useful tools that almost every game 
 \
 It comes with OOP, Timers, a Debugging helper, etc. All modules can be seen [here](<README.md#Made modules>).\
 \
-Documentation of Love2d tools can be found [here](https://Nykenik24.github.io/docs/love2d-tools).
 > note: Love2d tools is **NOT** perfect, and you should know that bugs can occur and that it is currently **Work In Progress**.
 
 ### Disclaimer
@@ -236,4 +235,3 @@ love .
 
 # Links
 - Love2d forum post: https://love2d.org/forums/viewtopic.php?t=96218
-- Documentation: https://Nykenik24.github.io/docs/love2d-tools
